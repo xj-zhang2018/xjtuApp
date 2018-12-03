@@ -23,6 +23,37 @@
 				</configuration>
 			</plugin>
 		</plugins>
+      <!--   <finalName>IntegrateDemo</finalName> -->
+      
+      
+      <!-- 这一段话的作用是可以让maven打包时把目录下的费java雷文佳一起打包起来而不是跳过，防止啊打包后的文件缺失配置文件，
+      导致在服务器上的启动失败加上配置 -->
+<resources>  
+            <resource>  
+                <directory>src</directory>  
+                <includes>  
+                    <include>**/*.properties</include>  
+                    <include>**/*.xml</include>  
+                    <include>**/*.tld</include>  
+                </includes>  
+                <filtering>false</filtering>  
+            </resource>  
+            <resource>  
+                <directory>src/main/java</directory>  
+                <includes>  
+                    <include>**/*.properties</include>  
+                    <include>**/*.xml</include>  
+                    <include>**/*.tld</include>  
+                </includes>  
+                <filtering>false</filtering>  
+            </resource>  
+        </resources>
+
+      
+      
+      
+      
+      
 	</build>
 	<dependencies>
 		<dependency>
