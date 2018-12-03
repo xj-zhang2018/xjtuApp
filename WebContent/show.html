@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>设备状态记录查询</title>
+</head>
+
+
+<link href="css/chart.css" rel="stylesheet" type="text/css">
+<script  src="js/jquery-1.9.1.min.js"></script>
+<script  src="js/echarts.min.js"></script>
+
+
+<body>
+<div class="btn-group" data-toggle="buttons" style="margin-left: 20%">
+起始时间:<input type="datetime-local" value="2017-04-15T13:38:31"
+							id="beginTime" /> 结束时间:<input type="datetime-local"
+							value="2019-04-19T13:47:47" id="endTime" />
+</div>
+<div class="btn-group" data-toggle="buttons" style="margin-left: 70%">
+        <label class="btn btn-success"> <input type="radio"
+            name="options" id="option1" value="1" checked="checked" onclick="getInfo()">收入
+        </label> <label class="btn btn-success"> <input type="radio"
+            name="options" id="option2" value="2" onclick="getInfo()">支出
+        </label>
+    </div>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="line" style="width: 95%; height: 400px;"></div>
+   
+<script  src="js/record.js"></script>
+</body>
+</html>
