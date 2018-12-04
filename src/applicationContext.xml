@@ -54,13 +54,10 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://172.30.230.200:3306/kafkadb"></property>
 		<property name="password" value="junjun123"></property>
-		<property name="username" value="root"></property>
-	</bean>
+		<property name="username" value="zxj"></property>
+	</bean>javascript:void(0)
 	
 	
-	
-	
-
 	<!-- 指定实现JPA的适配器，主要作用如下： 1、取代persistence.xml中的<provider> 2、指定方言 3、通知“entityManagerFactory”产生什么样的entityManager 
 		4、还可以使用EclipseLinkJpaVendorAdapter(Toplink)，openJpaVendorAdapter -->
 	<bean id="hibernateJpaVendorAdapter"
