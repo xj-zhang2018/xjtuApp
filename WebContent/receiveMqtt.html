@@ -13,7 +13,7 @@
 <script type="text/javascript">
 	$(function(){
 		$("#receiveMessage").on("click",function(){
-			alert("开始接受消息")
+			alert("开始接受MQTT消息")
 			var obj={type:"GET",url:"receiveMessage"};
 			$.ajax(obj).done(function(res){
 				
