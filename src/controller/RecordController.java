@@ -24,7 +24,7 @@ import org.xjtu.demo.Echarts;
 import org.xjtu.demo.OrderCountBo;
 import org.xjtu.demo.Series;
 
-import com.xj.mqtt.client;
+import com.xj.mqtt.Client;
 
 import pojo.Record;
 import service.RecordManager;
@@ -146,14 +146,14 @@ public class RecordController {
     
     @RequestMapping(value="/receiveMessage",method=RequestMethod.GET)
 	public void receiveMessage(){
-    	  client client001 = new client("client001");  
+    	  Client client001 = new Client("client001");  
           client001.start();  
 	}
     
     
     
     
-    
+  
     
     
     

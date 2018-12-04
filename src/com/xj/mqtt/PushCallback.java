@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
+import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import com.xj.persistence.Dao;
@@ -12,12 +13,14 @@ import com.xj.persistence.Parameter;
 
 class PushCallback implements MqttCallback {
 	private String threadId;
+	MqttClient client;
+	Dao db;
 	
-	   Dao db;
-	
-    public PushCallback() {
+    public PushCallback(MqttClient client) {
     	db = Dao.getInstance();
+    	this.client=client;
 	}
+
 
 	public void connectionLost(Throwable cause) {
     	 System.out.println("连接断开，可以做重连"); 
@@ -38,9 +41,11 @@ class PushCallback implements MqttCallback {
          List<Parameter>param=new ArrayList<>();
          param.add(new Parameter(Integer.parseInt(args[0]),args[1]));
          db.insertBatch(sql, param);
-         }else {
-        	 System.out.println("应该中断接受消息"); 
+         }else {//字符以冒号隔开还有其他的
+        	if(msg!=null&&!msg.equals("close"))
+        		this.client.disconnect();
+        	else 
+        		System.out.println("空数据"); 
          }
-         
     }
 }

@@ -9,12 +9,12 @@ import org.eclipse.paho.client.mqttv3.MqttPersistenceException;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  
 /**
- * 发�?�数据到mqtt服务�?
- * @author：涂�?
- * @date 2017�?8�?16�? 下午11:15:22
+ * 鍙戯拷?锟芥暟鎹埌mqtt鏈嶅姟锟�?
+聽* @author锛氭秱锟�?
+聽* @date 2017锟�?8锟�?16锟�? 涓嬪崍11:15:22
  */
 public class PubMsg {
-	private static int qos = 2; //只有�?�?
+	private static int qos = 2; //鍙湁锟�?锟�?
 	private static String broker = "tcp://newmqtt.neuseer.com:31181";
 	private static String userName = "zxj";
 	private static String passWord = "junjun123";
@@ -30,7 +30,7 @@ public class PubMsg {
 		connOpts.setConnectionTimeout(10);
 		connOpts.setKeepAliveInterval(20);
 //		String[] uris = {"tcp://10.100.124.206:1883","tcp://10.100.124.207:1883"};
-//		connOpts.setServerURIs(uris);  //起到负载均衡和高可用的作�?
+//		connOpts.setServerURIs(uris);  //璧峰埌璐熻浇鍧囪　鍜岄珮鍙敤鐨勪綔锟�?
 		MqttClient mqttClient = new MqttClient(broker, clientId, persistence);
 		//mqttClient.setCallback(new PushCallback());
 		mqttClient.connect(connOpts);
@@ -63,8 +63,8 @@ public class PubMsg {
 		int id=0;
 		while(true) {
 			id++;
-			publish(id+":zxj","client-id-0","share/edge/server/public/a");
-		   if(id>1000)break;
+			publish(id+":zxj:test","client-id-0","share/edge/server/public/a");
+		   if(id>10)break;
 		}
 	}
 }

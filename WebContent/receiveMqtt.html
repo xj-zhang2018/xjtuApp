@@ -13,16 +13,23 @@
 <script type="text/javascript">
 	$(function(){
 		$("#receiveMessage").on("click",function(){
-			alert("开始接受消息")
+			alert("开始接受Mqtt消息")
 			var obj={type:"GET",url:"receiveMessage"};
 			$.ajax(obj).done(function(res){
 				
 			});
 		});
+		
+	
+		
 	});
 </script>
 </head>
+
 <body>
    <button id="receiveMessage" >开启接收数据</button>
+   
+    <button id="shoudownMqtt" >关闭MQTT接受</button>
+   
 </body>
 </html>
