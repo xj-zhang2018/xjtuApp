@@ -24,6 +24,8 @@ import org.xjtu.demo.Echarts;
 import org.xjtu.demo.OrderCountBo;
 import org.xjtu.demo.Series;
 
+import com.xj.mqtt.client;
+
 import pojo.Record;
 import service.RecordManager;
 
@@ -134,4 +136,25 @@ public class RecordController {
         Echarts data=new Echarts(legend, category, series);
         return data;  
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    @RequestMapping(value="/receiveMessage",method=RequestMethod.GET)
+	public void receiveMessage(){
+    	  client client001 = new client("client001");  
+          client001.start();  
+	}
+    
+    
+    
+    
+    
+    
+    
+    
 }
