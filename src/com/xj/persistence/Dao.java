@@ -16,14 +16,14 @@ public class Dao {
 			// 其中test是我们要链接的数据库，user是数据库用户名，password是数据库密码。
 			// 3306是mysql的端口号，一般是这个
 			// 后面那串长长的参数是为了防止乱码，免去每次都需要在任何语句都加入一条SET NAMES UTF8
-			String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+			/*String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "root";
-			String password = "123456";
+			String password = "123456";*/
 			
 			
-			/*String url = "jdbc:mysql://172.30.230.200:3306/kafkadb?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+			String url = "jdbc:mysql://172.30.230.200:3306/kafkadb?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "zxj";
-			String password = "junjun123";*/
+			String password = "junjun123";
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
