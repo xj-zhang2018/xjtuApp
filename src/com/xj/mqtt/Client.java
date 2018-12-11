@@ -9,13 +9,13 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
   
 public class Client {  
   
-    public static final String HOST = "tcp://newmqtt.neuseer.com:31181";  
+    public static final String HOST = "tcp://newmqtt.neuseer.com:32546";  
     public static final String TOPIC = "share/edge/server/public/a";  
     private  String clientid = "client124";  
     private MqttClient client;  
     private MqttConnectOptions options;  
     private String userName = "zxj";
-    private String passWord = "junjun123";
+    private String passWord = "junjun";
   
     private ScheduledExecutorService scheduler;  
     public Client(String clientid) {

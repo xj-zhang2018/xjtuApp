@@ -15,9 +15,9 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  */
 public class PubMsg {
 	private static int qos = 2; //鍙湁锟�?锟�?
-	private static String broker = "tcp://newmqtt.neuseer.com:31181";
+	private static String broker = "tcp://newmqtt.neuseer.com:32546";
 	private static String userName = "zxj";
-	private static String passWord = "junjun123";
+	private static String passWord = "junjun";
  
 	
 	private static MqttClient connect(String clientId,String userName,
@@ -63,7 +63,7 @@ public class PubMsg {
 		int id=0;
 		while(true) {
 			id++;
-			publish(id+":zxj:test","client-id-0","share/edge/server/public/a");
+			publish(id+":zxj","client-id-0","share/edge/server/public/a");
 		   if(id>10)break;
 		}
 	}

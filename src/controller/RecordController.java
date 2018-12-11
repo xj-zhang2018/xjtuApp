@@ -24,9 +24,13 @@ import org.xjtu.demo.Echarts;
 import org.xjtu.demo.OrderCountBo;
 import org.xjtu.demo.Series;
 
+import com.xj.Datacenter.Datacenter;
+import com.xj.Datacenter.MonitorInfoBeanForLinux;
+import com.xj.Datacenter.Pair;
 import com.xj.mqtt.Client;
 
 import pojo.Record;
+import pojo.User;
 import service.RecordManager;
 
 @ResponseBody//返回的是json字体
@@ -151,10 +155,20 @@ public class RecordController {
 	}
     
     
-    
-    
   
-    
+  
+    @RequestMapping(value="/network",method=RequestMethod.GET)
+	public MonitorInfoBeanForLinux network(){
+    	Datacenter datacenter=new Datacenter();
+    	return datacenter.GetPerformanceForLinux();
+    	
+	}
+  
+    @RequestMapping(value="/networkDatail",method=RequestMethod.GET)
+  	public Pair  networkDatail(){
+      	Datacenter datacenter=new Datacenter();
+      	return datacenter.GetNetWorkDetail();
+  	}
     
     
 }
