@@ -18,7 +18,9 @@ public class Datacenter  {
 	static CopyOnWriteArrayList<Pair>NetWorkDetail=new CopyOnWriteArrayList<Pair>();
 	private String data;  
 	
-   
+     
+	
+	
 	
 	public static Pair GetNetWorkDetail()  {
 		ClusterHelper helper=new ClusterHelper();
