@@ -21,17 +21,17 @@
 <%-- <%@ include file="head.jsp"%> --%>
 
 <div class="block-area shortcut-area">
-                    <a class="shortcut tile" href="network.jsp">
+                    <a class="shortcut tile" href="neuseer.jsp">
                         <img src="css/shortcuts/connections.png" alt="">
                         <small class="t-overflow">用户数据</small>
                     </a>
-                    <a class="shortcut tile" href="network.jsp">
+                    <a class="shortcut tile" href="chart.jsp">
                         <img src="css/shortcuts/twitter.png" alt="">
                         <small class="t-overflow">计算集群数据</small>
                     </a>
                    
                    
-                    <a class="shortcut tile" href="network.jsp">
+                    <a class="shortcut tile" href="DataCenter.jsp">
                         <img src="css/shortcuts/money.png" alt="">
                         <small class="t-overflow">HADOOP</small>
                     </a>
