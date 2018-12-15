@@ -39,8 +39,8 @@ class PushCallback implements MqttCallback {
           {
         String sql = "insert into entity (id,name) value (?,?)";
          List<Parameter>param=new ArrayList<>();
-         param.add(new Parameter(Integer.parseInt(args[0]),args[1]));
-         db.insertBatch(sql, param);
+         //param.add(new Parameter(Integer.parseInt(args[0]),args[1]));
+         //db.insertBatch(sql, param);
          }else {//字符以冒号隔开还有其他的
         	if(msg!=null&&!msg.equals("close"))
         		this.client.disconnect();
