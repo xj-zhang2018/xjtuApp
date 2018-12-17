@@ -52,8 +52,8 @@
  <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://172.30.159.167:3306/app4sql"></property>
-		<property name="password" value="userA8S"></property>
-		<property name="username" value="siJEKXHkEcf5F7xw"></property>
+		<property name="username" value="userA8S"></property>
+	    <property name="password" value="siJEKXHkEcf5F7xw"></property>
 	</bean>  
 	
 	
