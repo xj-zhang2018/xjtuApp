@@ -39,13 +39,12 @@
 	
 	
 	<!-- webdatashuju 只有一张表，表的字段是users，id,uname ,age   -->
-	
-<!-- <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+<!--  <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/kafkadata"></property>
 		<property name="password" value="123456"></property>
 		<property name="username" value="root"></property>
-	</bean>  -->    
+	</bean> -->    
 	
 	
 	<!-- 在寄云上测试代码用的 -->
@@ -55,7 +54,7 @@
 		<property name="url" value="jdbc:mysql://172.30.174.193:3306/kafkadb"></property>
 		<property name="password" value="junjun123"></property>
 		<property name="username" value="zxj"></property>
-	</bean> 
+	</bean>  
 	
 	
 	<!-- 指定实现JPA的适配器，主要作用如下： 1、取代persistence.xml中的<provider> 2、指定方言 3、通知“entityManagerFactory”产生什么样的entityManager 
