@@ -118,7 +118,7 @@ public param Getindicator(String datapoint)  {
      double VARIANCE=0;
      param parm=null;
 	try {
-		String sql="select max(value) ,min(value),VARIANCE(value)from dataEntity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
+		String sql="select max(value) ,min(value),VARIANCE(value)from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
 		 sql_statement = (Statement) con.createStatement();
 		 ResultSet result = sql_statement.executeQuery(sql);
          
