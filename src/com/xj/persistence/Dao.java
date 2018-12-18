@@ -17,33 +17,33 @@ import pojo.Record;
 import pojo.param;
  
 public class Dao {
-	// һ��������ʼ������
+	// 一锟斤拷锟斤拷锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
 	private Connection con;
  
-	// ���´��룬��֤����ֻ����һ��ʵ��
+	// 锟斤拷锟铰达拷锟诫，锟斤拷证锟斤拷锟斤拷只锟斤拷锟斤拷一锟斤拷实锟斤拷
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-		    String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+		   /* String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "root";
-			String password = "123456";
+			String password = "123456";*/
 			
 			
-			/*String url = "jdbc:mysql://172.30.159.167:3306/app4sql?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+			String url = "jdbc:mysql://172.30.159.167:3306/app4sql?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "userA8S";
-			String password = "siJEKXHkEcf5F7xw";*/
+			String password = "siJEKXHkEcf5F7xw";
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	} // ˽���޲ι��췽��
+	} // 私锟斤拷锟睫参癸拷锟届方锟斤拷
  
-	// ���Լ��ڲ������Լ���һ��ʵ����ֻ���ڲ�����
+	// 锟斤拷锟皆硷拷锟节诧拷锟斤拷锟斤拷锟皆硷拷锟斤拷一锟斤拷实锟斤拷锟斤拷只锟斤拷锟节诧拷锟斤拷锟斤拷
 	private static Dao db = null;
  
-	// ���������Զ�������ϵͳ�ṩ���ʵ������
-	// �����ṩ��һ�����ⲿ���ʱ�class�ľ�̬����������ֱ�ӷ���
+	// 锟斤拷锟斤拷锟斤拷锟斤拷锟皆讹拷锟斤拷锟斤拷锟斤拷系统锟结供锟斤拷锟绞碉拷锟斤拷锟斤拷锟�
+	// 锟斤拷锟斤拷锟结供锟斤拷一锟斤拷锟斤拷锟解部锟斤拷锟绞憋拷class锟侥撅拷态锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷直锟接凤拷锟斤拷
 	public static Dao getInstance() {
 		if (db == null) {
 			db = new Dao();
@@ -53,7 +53,7 @@ public class Dao {
  
 
  
-	// �����������ж����ݿ������
+	// 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫讹拷锟斤拷锟捷匡拷锟斤拷锟斤拷锟�
 	protected void finalize(){
 		try {
 		if (!con.isClosed() || con != null) {
@@ -110,7 +110,7 @@ public void insertoneRecord(String sql, dataEntity data)  {
 	
 	
 
-//查询某一类传感器距离当前5分钟的方差，均值，最大值，
+//鏌ヨ鏌愪竴绫讳紶鎰熷櫒璺濈褰撳墠5鍒嗛挓鐨勬柟宸紝鍧囧�硷紝鏈�澶у�硷紝
 public param Getindicator(String datapoint)  {
 	Statement sql_statement;
 	 double max=0;
@@ -128,7 +128,7 @@ public param Getindicator(String datapoint)  {
              min= result.getDouble(2);
              VARIANCE=result.getDouble(3);
              parm=new param(max, min, VARIANCE);
-             System.out.println(" max :" + max + "min " + min + "方差 " + VARIANCE); 
+             System.out.println(" max :" + max + "min " + min + "鏂瑰樊 " + VARIANCE); 
          }
                  
                 
@@ -150,7 +150,7 @@ public param Getindicator(String datapoint)  {
 
 
 
-//查询某一类传感器距离当前5分钟的方差，均值，最大值，
+//鏌ヨ鏌愪竴绫讳紶鎰熷櫒璺濈褰撳墠5鍒嗛挓鐨勬柟宸紝鍧囧�硷紝鏈�澶у�硷紝
 public  List<dataEntity> findRangeRecord(String beginTime, String endTime,String datapoint){
 	Statement sql_statement;
 	List<dataEntity> res=new ArrayList<>();
