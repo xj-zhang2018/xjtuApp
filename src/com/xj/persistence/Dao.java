@@ -156,7 +156,7 @@ public  List<dataEntity> findRangeRecord(String beginTime, String endTime,String
 	List<dataEntity> res=new ArrayList<>();
 	try {
 		
-		String sql="select * from dataEntity where  timeStamp>? and timeStamp<? and datapoint=?";
+		String sql="select * from dataentity where  timeStamp>? and timeStamp<? and datapoint=?";
 		
       
 		 PreparedStatement ps = (PreparedStatement) con.prepareStatement(sql);
