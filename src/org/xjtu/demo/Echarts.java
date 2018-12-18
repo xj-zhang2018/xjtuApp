@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Echarts {
-    public List<String> legend = new ArrayList<String>();//Êý¾Ý·Ö×é  
-    public List<String> category = new ArrayList<String>();//ºá×ø±ê  
-    public List<Series> series = new ArrayList<Series>();//×Ý×ø±ê  
+    public List<String> legend = new ArrayList<String>();
+    public List<String> category = new ArrayList<String>();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+    public List<Series> series = new ArrayList<Series>();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 
 
     public Echarts(List<String> legendList, List<String> categoryList, List<Series> seriesList) {  
