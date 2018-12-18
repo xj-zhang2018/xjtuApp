@@ -7,7 +7,7 @@ public class Series {
 
     public String type;  
 
-    public List<BigDecimal> data;  
+    public List<Double> data;  
     
     
     
@@ -17,7 +17,7 @@ public class Series {
 
 
     
-    public Series( String name, String type, List<BigDecimal> data) {  
+    public Series( String name, String type, List<Double> data) {  
         super();  
         this.name = name;  
         this.type = type;  

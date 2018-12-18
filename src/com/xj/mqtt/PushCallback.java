@@ -1,6 +1,8 @@
 package com.xj.mqtt;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -8,6 +10,8 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.xj.persistence.Dao;
 import com.xj.persistence.Parameter;
 
@@ -23,29 +27,53 @@ class PushCallback implements MqttCallback {
 
 
 	public void connectionLost(Throwable cause) {
-    	 System.out.println("Á¬½Ó¶Ï¿ª£¬¿ÉÒÔ×öÖØÁ¬"); 
+    	 System.out.println("æ–­å¼€è¿æ¥"); 
     }
  
     public void deliveryComplete(IMqttDeliveryToken token) {
  //System.out.println("deliveryComplete---------" + token.isComplete());
     }
     public void messageArrived(String topic, MqttMessage message) throws Exception {
-    	 System.out.println("½ÓÊÕÏûÏ¢Ö÷Ìâ : " + topic);  
-         //System.out.println("½ÓÊÕÏûÏ¢Qos : " + message.getQos());  
-         System.out.println("½ÓÊÕÏûÏ¢ÄÚÈİ : " +new String(message.getPayload(),"utf-8"));  
+    	 System.out.println("topic: " + topic);  
+         //System.out.println("Qos : " + message.getQos());  
+         
          String msg=new String(message.getPayload(),"utf-8");
-         String[] args=msg.split(":");
+        
+         System.out.println("æ¥æ”¶åˆ°æ•°æ®æ˜¯"+msg);
+         
+         if(!msg.equals("close")) {
+         JSONObject jsonObject = JSON.parseObject(msg);
+         long timeStamp=jsonObject.getLongValue("timeStamp");
+         Timestamp time = new Timestamp(timeStamp);
+         
+         
+         String datapoint=jsonObject.getString("datapoint");
+         String deviceId=jsonObject.getString("deviceId");
+         double value=jsonObject.getDouble("value");
+        
+         String sql="insert into dataEntity(timeStamp,datapoint,deviceId,value) value (?,?,?,?)";
+        dataEntity data=new dataEntity(time, datapoint, deviceId, value);
+        db.insertoneRecord(sql, data);
+         }
+         
+         
+         
+         
+         
+         
+         
+    /*     String[] args=msg.split(":");
          if(args.length==2)
           {
         String sql = "insert into entity (id,name) value (?,?)";
          List<Parameter>param=new ArrayList<>();
          //param.add(new Parameter(Integer.parseInt(args[0]),args[1]));
          //db.insertBatch(sql, param);
-         }else {//×Ö·ûÒÔÃ°ºÅ¸ô¿ª»¹ÓĞÆäËûµÄ
+         }else {//ï¿½Ö·ï¿½ï¿½ï¿½Ã°ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         	if(msg!=null&&!msg.equals("close"))
         		this.client.disconnect();
         	else 
-        		System.out.println("¿ÕÊı¾İ"); 
-         }
+        		System.out.println("ç©ºæ•°æ®"); 
+         }*/
     }
 }

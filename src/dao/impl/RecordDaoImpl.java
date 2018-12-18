@@ -4,6 +4,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
+
+import com.xj.mqtt.dataEntity;
+
 import dao.RecordDao;
 import pojo.Record;
 @Repository
@@ -36,5 +39,9 @@ public class RecordDaoImpl implements RecordDao{
 		List<Record> records=manager.createQuery(jpql).setParameter("beginTime", beginTime).setParameter("endTime", endTime).getResultList();
 		System.out.println("record is"+records);
 		return records;
+		
+		
+		
+		
 	}
 }

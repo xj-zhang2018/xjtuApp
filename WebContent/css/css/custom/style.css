@@ -355,6 +355,105 @@ select {
         .romana_header_top_left a i {
           padding-right: 5px; } }
 
+
+
+
+.romana_header_top_left2 {
+  padding: 8px 0px; }
+  .romana_header_top_left2 .lang {
+    background: #288feb none repeat scroll 0 0;
+    left: 0;
+    list-style: outside none none;
+    margin: 0;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 47px;
+    transform: translateY(60px);
+    visibility: hidden;
+    width: 200px;
+    z-index: 999999;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s; }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_header_top_left2 .lang {
+        top: 79px; } }
+    .romana_header_top_left2 .lang li {
+      display: block;
+      line-height: 40px;
+      margin-bottom: 1px;
+      text-transform: capitalize;
+      background: #b0d4f4;
+      cursor: pointer;
+      -webkit-transition: .4s;
+      transition: .4s; }
+      .romana_header_top_left2 .lang li:hover {
+        color: #fff; }
+  .romana_header_top_left2 .clicked {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  .romana_header_top_left2 .langIcon i {
+    margin-left: 10px; }
+  .romana_header_top_left2 .language_option {
+    cursor: pointer;
+    display: inline-block; }
+    .romana_header_top_left2 .language_option:hover i {
+      color: #288feb; }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_header_top_left2 .language_option {
+        margin-top: 20px; } }
+    .romana_header_top_left2 .language_option span {
+      color: #fff;
+      font-size: 13px;
+      text-transform: capitalize;
+      font-weight: 500; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .romana_header_top_left2 .language_option span {
+          font-size: 12px; } }
+    .romana_header_top_left2 .language_option i {
+      color: #b2b2b2;
+      padding-left: 15px;
+      padding-right: 33px;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .romana_header_top_left .language_option i {
+          padding-right: 3px;
+          padding-left: 5px; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .romana_header_top_left .language_option i {
+          padding-right: 15px; } }
+  .romana_header_top_left2 a {
+    color: #fff;
+    font-size: 13px; }
+    .romana_header_top_left2 a:hover i {
+      color: #288feb; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .romana_header_top_left a {
+        font-size: 12px; } }
+    .romana_header_top_left a i {
+      padding-right: 15px;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .romana_header_top_left a i {
+          padding-right: 5px; } }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .romana_header_top_right {
   padding: 8px 0px; }
   .romana_header_top_right ul li {
@@ -384,11 +483,12 @@ select {
   z-index: 999; }
 
 .romana_logo {
-  margin-top: 18px; }
-  @media only screen and (min-width: 0px) and (max-width: 767px) {
+  margin-top: 28px;
+  padding-left: 0px; }
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
     .romana_logo {
-      margin-bottom: 6px;
-      margin-top: 12px; } }
+      margin-bottom: 0px;
+      margin-top: 0px; } }
 
 nav#navbar {
   text-align: center; }
@@ -733,6 +833,55 @@ small {
   right: 82px;
   top: 17px; }
 
+
+
+
+
+
+.romana_hero2_text {
+  padding-top: 0px;
+  padding-left: 40px;
+    color: #288feb;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 10px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .romana_hero2_text h1 {
+        margin-bottom: 15px;
+        margin-top: 30px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_hero2_text h1 {
+        font-size: 16px;
+        margin-bottom: 17px; } }
+
+
+
+.romana_hero3_text {
+  padding-top: 0px;
+  padding-left: 0px;
+    color: #288feb;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .romana_hero2_text h1 {
+        margin-bottom: 15px;
+        margin-top: 30px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_hero2_text h1 {
+        font-size: 16px;
+        margin-bottom: 17px; } }
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .slider_text_animation {
+    margin: 0 auto;
+    max-width: 258px; } }
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .slider_text_animation {
+    margin: 0 auto;
+    max-width: 400px; } }
 .romana_hero_text {
   padding-top: 140px;
   padding-left: 70px;

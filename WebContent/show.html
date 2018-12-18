@@ -7,26 +7,55 @@
 
 
 <link href="css/chart.css" rel="stylesheet" type="text/css">
-<script  src="js/jquery-1.9.1.min.js"></script>
 <script  src="js/echarts.min.js"></script>
-
-
+<script  src="js/jquery-1.9.1.min.js"></script>
 <body>
+<script  src="js/record.js"></script>
+
+
+
+<br></br>
+<br><</br>
+
 <div class="btn-group" data-toggle="buttons" style="margin-left: 20%">
-起始时间:<input type="datetime-local" value="2017-04-15T13:38:31"
+起始时间:<input type="datetime-local" value="2018-12-17T23:01:34"
 							id="beginTime" /> 结束时间:<input type="datetime-local"
-							value="2019-04-19T13:47:47" id="endTime" />
+							value="2018-12-17T23:02:34" id="endTime" />
 </div>
 <div class="btn-group" data-toggle="buttons" style="margin-left: 70%">
-        <label class="btn btn-success"> <input type="radio"
-            name="options" id="option1" value="1" checked="checked" onclick="getInfo()">收入
-        </label> <label class="btn btn-success"> <input type="radio"
-            name="options" id="option2" value="2" onclick="getInfo()">支出
-        </label>
+       
+             
+               数据通道选择 ：  <select onchange="changeChart()" id="page" style="width:150px" > 
+     <option value="SET1" >SET1</option> 
+      <option value="SET2" >SET2</option> 
+       <option value="SET3" >SET3</option> 
+        <option value="Sensor1" >Sensor1</option> 
+         <option value="Sensor2" >Sensor2</option> 
+          <option value="Sensor3" >Sensor3</option> 
+           <option value="Sensor4" >Sensor4</option> 
+            <option value="Sensor5" >Sensor5</option> 
+             <option value="Sensor6" >Sensor6</option> 
+              <option value="Sensor7" >Sensor7</option> 
+               <option value="Sensor8" >Sensor8</option> 
+                <option value="Sensor9" >Sensor9</option> 
+                 <option value="Sensor10" >Sensor10</option> 
+                  <option value="Sensor11" >Sensor11</option> 
+                   <option value="Sensor12" >Sensor12</option> 
+                    <option value="Sensor13" >Sensor13</option> 
+                     <option value="Sensor14" >Sensor14</option> 
+                      <option value="Sensor15" >Sensor15</option> 
+                       <option value="Sensor16" >Sensor16</option> 
+                        <option value="Sensor17" >Sensor17</option> 
+                         <option value="Sensor18" >Sensor18</option> 
+                          <option value="Sensor19" >Sensor19</option> 
+                            <option value="Sensor20" >Sensor20</option> 
+                             <option value="Sensor21" >Sensor21</option> 
+                              <option value="unit_num" >unit_num</option> 
+
+    </select> 
     </div>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="line" style="width: 95%; height: 400px;"></div>
    
-<script  src="js/record.js"></script>
 </body>
 </html>

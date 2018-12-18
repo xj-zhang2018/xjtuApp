@@ -28,12 +28,15 @@ import com.xj.Datacenter.Datacenter;
 import com.xj.Datacenter.MonitorInfoBeanForLinux;
 import com.xj.Datacenter.Pair;
 import com.xj.mqtt.Client;
+import com.xj.mqtt.dataEntity;
+import com.xj.persistence.Dao;
 
 import pojo.Record;
 import pojo.User;
+import pojo.param;
 import service.RecordManager;
 
-@ResponseBody//·µ»ØµÄÊÇjson×ÖÌå
+@ResponseBody//ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½jsonï¿½ï¿½ï¿½ï¿½
 @Controller
 public class RecordController {
 	@Autowired
@@ -41,7 +44,7 @@ public class RecordController {
 	@RequestMapping(value="/record",method=RequestMethod.POST)
 	public Record addUser(Record record){
 		System.out.println("id is"+record.getAccountId());
-		return recordManager.regist(record);//×¢²á²Ù×÷
+		return recordManager.regist(record);//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	
@@ -52,36 +55,42 @@ public class RecordController {
 	
 	@RequestMapping(value="/recordrange",method=RequestMethod.POST)
 	public List<Record> findRangeRecord(String beginTime, String endTime) throws ParseException{
-		//(@RequestParam("beginTime")String beginTime, @RequestParam("endTime")String endTime) ÕâÖÖ·½Ê½Ò²¿ÉÒÔ
+		//(@RequestParam("beginTime")String beginTime, @RequestParam("endTime")String endTime) ï¿½ï¿½ï¿½Ö·ï¿½Ê½Ò²ï¿½ï¿½ï¿½ï¿½
 	
 		SimpleDateFormat   sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return recordManager.findRangeRecord(sdf.parse(beginTime),sdf.parse(endTime));
 	}
-	 @SuppressWarnings("deprecation")  
+	
+	
+	
+	@SuppressWarnings("deprecation")  
 	    @ResponseBody 
 	    @RequestMapping(value="Echarts")  
 	    public Echarts showCharts(String id,String type,String isIncome,String beginTime,String endTime) throws ParseException {        
-	      
-			//System.out.println("startTime£º"+beginTime+",end:"+endTime+",id"+id+",type:"+type+",income:"+isIncome);
+	      System.out.println("æ•°æ®é€šåˆ°çš„å€¼"+isIncome);
+			//System.out.println("startTimeï¿½ï¿½"+beginTime+",end:"+endTime+",id"+id+",type:"+type+",income:"+isIncome);
 		 
 	        SimpleDateFormat   sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	      
-	        List<Record> records = recordManager.findRangeRecord(sdf.parse(beginTime),sdf.parse(endTime));
-	        List<String> category = new ArrayList<String>();
-	        List<BigDecimal>  index = new ArrayList<BigDecimal>();
+	        //List<Record> records = recordManager.findRangeRecord(sdf.parse(beginTime),sdf.parse(endTime));
+	        Dao db = Dao.getInstance();
+	        List<dataEntity> records = db.findRangeRecord(beginTime,endTime,isIncome);
+	       System.out.println("æŸ¥åˆ°è®°å½•åˆ—è¡¨"+records);
+            List<String> category = new ArrayList<String>();
+	        List<Double>  index = new ArrayList<Double>();
 	        String getDate = null;
-	        BigDecimal getPrice = null;
+	        double getValue =0;
 	       
-	        for(Record reco:records)
+	        for(dataEntity reco:records)
 	        {
-	        	    getDate = reco.getCreateDate().toString();        
-		            getPrice =reco.getPrice();
+	        	    getDate = reco.getTimeStamp().toString();       
+	        	    getValue =reco.getValue();
 		            category.add(getDate);
-		            index.add(getPrice);
+		            index.add(getValue);
 	        }
-	        List<String> legend = new ArrayList<String>(Arrays.asList(new String[]{"½ğ¶î"}));//Êı¾İ·Ö×é
+	        List<String> legend = new ArrayList<String>(Arrays.asList(new String[]{"value"}));//ï¿½ï¿½ï¿½İ·ï¿½ï¿½ï¿½
 	        List<Series> series = new ArrayList<Series>();
-	        series.add(new  Series("½ğ¶î", "line",index));
+	        series.add(new  Series("value", "line",index));
 	        
 	        Echarts data=new Echarts(legend, category, series);
 	        return data;  
@@ -91,58 +100,37 @@ public class RecordController {
 	
 	
 	
-    @SuppressWarnings("deprecation")  
+	@SuppressWarnings("deprecation")  
     @ResponseBody 
-    @RequestMapping(value="test")  
-    public Echarts lineData(String id,String type,String isIncome,String beginTime,String endTime) throws ParseException {        
-        OrderCountBo orderCount = new OrderCountBo();
-        orderCount.setAccountId(id);
-        orderCount.setAccountType(type);
-        orderCount.setIsIncome(isIncome);                  //¡°1¡±ÊÇÊÕÈë£¬¡°2¡±ÊÇÖ§³ö
-        //Ôö¼ÓµÄ
+    @RequestMapping(value="Echarts333")  
+    public Echarts showCharts333(String id,String type,String isIncome,String beginTime,String endTime) throws ParseException {        
+      
+		//System.out.println("startTimeï¿½ï¿½"+beginTime+",end:"+endTime+",id"+id+",type:"+type+",income:"+isIncome);
+	 
         SimpleDateFormat   sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-       // orderCount.setBeginCreateDate( sdf.parse(beginTime));
-        //orderCount.setEndCreateDate( sdf.parse(endTime));
-        orderCount.setBeginCreateDate( sdf.parse("2016-1-24 21:59:06"));
-        orderCount.setEndCreateDate( sdf.parse("2016-5-24 22:59:06"));
-        //ÎªÊ±¼äÉèÖÃ£¬Ôò×Ô¶¯¸³Öµ
-        if(null==orderCount.getBeginCreateDate()||null==orderCount.getEndCreateDate()){
-            orderCount.setEndCreateDate(new Date());
-            Calendar calendar = Calendar.getInstance();    //µÃµ½ÈÕÀú
-            calendar.setTime(new Date());                 //°Ñµ±Ç°Ê±¼ä¸³¸øÈÕÀú
-            calendar.add(Calendar.DAY_OF_MONTH, -1);      //ÉèÖÃÎªÇ°Ò»Ìì
-            Date date = calendar.getTime();               //µÃµ½Ç°Ò»ÌìµÄÊ±¼ä
-            orderCount.setBeginCreateDate(date);            
-        } 
-        List<OrderCountBo> getList = new ArrayList<>();
-        //orderCountService.getList(orderCount);    //²éÑ¯»ñÈ¡Êı¾İ,ÕâÀïÉèÖÃ¼ÙµÄÊı¾İ
-        
-        for(int i=1;i<50;i++) {
-        	OrderCountBo order=new OrderCountBo(id,"1","1",sdf.parse("2016-1-24 21:59:06"),sdf.parse("2016-5-24 22:59:06"),new BigDecimal(100+i*5));
-        	getList.add(order);
-        }
+      
+        List<Record> records = recordManager.findRangeRecord(sdf.parse(beginTime),sdf.parse(endTime));
         List<String> category = new ArrayList<String>();
         List<BigDecimal>  index = new ArrayList<BigDecimal>();
         String getDate = null;
         BigDecimal getPrice = null;
-        for(int i=0;i<getList.size();i++){                                     //Ñ­»·»ñÈ¡Êı¾İ
-            OrderCountBo getOrderCount = getList.get(i); 
-           // getDate = DateUtils.formatDateTime(getOrderCount.getCreateLogDate());           
-            getDate = new Date().toString();        
-            getPrice = getOrderCount.getPrice();
-            category.add(getDate);
-            index.add(getPrice);
-        }           
-        List<String> legend = new ArrayList<String>(Arrays.asList(new String[]{"½ğ¶î"}));//Êı¾İ·Ö×é
+       
+        for(Record reco:records)
+        {
+        	    getDate = reco.getCreateDate().toString();        
+	            getPrice =reco.getPrice();
+	            category.add(getDate);
+	            index.add(getPrice);
+        }
+        List<String> legend = new ArrayList<String>(Arrays.asList(new String[]{"é‡‘é¢"}));//ï¿½ï¿½ï¿½İ·ï¿½ï¿½ï¿½
         List<Series> series = new ArrayList<Series>();
-        series.add(new  Series("½ğ¶î", "line",index));
+       // series.add(new  Series("é‡‘é¢", "line",index));
         
         Echarts data=new Echarts(legend, category, series);
         return data;  
     }
-    
-    
-    
+
+
     
     
     
@@ -169,6 +157,24 @@ public class RecordController {
       	Datacenter datacenter=new Datacenter();
       	return datacenter.GetNetWorkDetail();
   	}
+    
+    
+    
+    
+    //æŸ¥è¯¢æ–¹å·®ç­‰å‚æ•°
+  @RequestMapping(value="/GetParm",method=RequestMethod.POST)
+  	public param  Getparam(String datapoint){
+      	Dao db=new Dao();
+    	return db.Getindicator(datapoint);
+  	}
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

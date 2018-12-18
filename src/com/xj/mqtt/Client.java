@@ -9,13 +9,13 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
   
 public class Client {  
   
-    public static final String HOST = "tcp://newmqtt.neuseer.com:32546";  
-    public static final String TOPIC = "share/edge/server/public/a";  
-    private  String clientid = "client124";  
+    public static final String HOST = "tcp://mqtt.yeseer.cn:30562";  
+    public static final String TOPIC = "sub/neucloud/websocket";  
+    private  String clientid = "client126";  
     private MqttClient client;  
     private MqttConnectOptions options;  
-    private String userName = "zxj";
-    private String passWord = "junjun";
+    private String userName = "userLQS";
+    private String passWord = "qVuAnx2RW3o71k2T";
   
     private ScheduledExecutorService scheduler;  
     public Client(String clientid) {
@@ -24,30 +24,30 @@ public class Client {
 	}
 	public void start() {  
         try {  
-            // hostÎªÖ÷»úÃû£¬clientid¼´Á¬½ÓMQTTµÄ¿Í»§¶ËID£¬Ò»°ãÒÔÎ¨Ò»±êÊ¶·û±íÊ¾£¬MemoryPersistenceÉèÖÃclientidµÄ±£´æĞÎÊ½£¬Ä¬ÈÏÎªÒÔÄÚ´æ±£´æ  
+            // hostÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½clientidï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MQTTï¿½Ä¿Í»ï¿½ï¿½ï¿½IDï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Î¨Ò»ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½MemoryPersistenceï¿½ï¿½ï¿½ï¿½clientidï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ä¬ï¿½ï¿½Îªï¿½ï¿½ï¿½Ú´æ±£ï¿½ï¿½  
             client = new MqttClient(HOST, clientid, new MemoryPersistence());  
-            // MQTTµÄÁ¬½ÓÉèÖÃ  
+            // MQTTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
             options = new MqttConnectOptions();  
-            // ÉèÖÃÊÇ·ñÇå¿Õsession,ÕâÀïÈç¹ûÉèÖÃÎªfalse±íÊ¾·şÎñÆ÷»á±£Áô¿Í»§¶ËµÄÁ¬½Ó¼ÇÂ¼£¬ÕâÀïÉèÖÃÎªtrue±íÊ¾Ã¿´ÎÁ¬½Óµ½·şÎñÆ÷¶¼ÒÔĞÂµÄÉí·İÁ¬½Ó  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½session,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªfalseï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á±£ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Ó¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªtrueï¿½ï¿½Ê¾Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
             options.setCleanSession(true);  
-            // ÉèÖÃÁ¬½ÓµÄÓÃ»§Ãû  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½Ã»ï¿½ï¿½ï¿½  
             options.setUserName(userName);  
-            // ÉèÖÃÁ¬½ÓµÄÃÜÂë  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½  
             options.setPassword(passWord.toCharArray());  
-            // ÉèÖÃ³¬Ê±Ê±¼ä µ¥Î»ÎªÃë  
+            // ï¿½ï¿½ï¿½Ã³ï¿½Ê±Ê±ï¿½ï¿½ ï¿½ï¿½Î»Îªï¿½ï¿½  
             options.setConnectionTimeout(10);  
           
-            // ÉèÖÃ»á»°ĞÄÌøÊ±¼ä µ¥Î»ÎªÃë ·şÎñÆ÷»áÃ¿¸ô1.5*20ÃëµÄÊ±¼äÏò¿Í»§¶Ë·¢ËÍ¸öÏûÏ¢ÅĞ¶Ï¿Í»§¶ËÊÇ·ñÔÚÏß£¬µ«Õâ¸ö·½·¨²¢Ã»ÓĞÖØÁ¬µÄ»úÖÆ  
+            // ï¿½ï¿½ï¿½Ã»á»°ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ ï¿½ï¿½Î»Îªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½1.5*20ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½Í¸ï¿½ï¿½ï¿½Ï¢ï¿½Ğ¶Ï¿Í»ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½  
             options.setKeepAliveInterval(20);  
-            // ÉèÖÃ»Øµ÷  
+            // ï¿½ï¿½ï¿½Ã»Øµï¿½  
             client.setCallback(new PushCallback(client));  
             MqttTopic topic = client.getTopic(TOPIC);  
-            //setWill·½·¨£¬Èç¹ûÏîÄ¿ÖĞĞèÒªÖªµÀ¿Í»§¶ËÊÇ·ñµôÏß¿ÉÒÔµ÷ÓÃ¸Ã·½·¨¡£ÉèÖÃ×îÖÕ¶Ë¿ÚµÄÍ¨ÖªÏûÏ¢    
+            //setWillï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ÒªÖªï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ß¿ï¿½ï¿½Ôµï¿½ï¿½Ã¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¶Ë¿Úµï¿½Í¨Öªï¿½ï¿½Ï¢    
             options.setWill(topic, "close".getBytes(), 2, true);  
               
             client.connect(options);  
            
-            //¶©ÔÄÏûÏ¢  
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢  
             int[] Qos  = {1};  
             String[] topic1 = {TOPIC};  
             client.subscribe(topic1, Qos);  

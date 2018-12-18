@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title -->
-    <title>远程监控</title>
+    <title>实时监控</title>
 
     <!-- ================================================================
         ***Favicon***
@@ -46,7 +46,65 @@
       <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    
+    
+    
+     <!--计算性能  -->
+      <link href="css/DataCenter/bootstrap.min.css" rel="stylesheet">
+       <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
+      
+      
+        <!-- Charts -->
+        <script src="js/jquery.flot.js"></script>
+        <script src="js/jquery.flot.time.js"></script> 
+        <script src="js/jquery.flot.animator.min.js"></script> 
+        <script src="js/jquery.flot.resize.min.js"></script> 
+        <script src="js/sparkline.min.js"></script> 
+        <script src="js/easypiechart.js"></script> 
+       <!-- <script src="../js/DataCenter/js/charts.js"></script> -->
+        <!-- Map -->
+        
+        <script src="js/jvectormap.min.js"></script> 
+        <script src="js/usa.js"></script>
+        
+        
+        <script src="js/icheck.js"></script> 
+        <script src="js/scroll.min.js"></script> 
+        <script src="js/calendar.min.js"></script> 
+        <script src="js/feeds.min.js"></script> 
+        
+        <script src="js/highcharts.js"></script>
+        <script src="js/exporting.js"></script>
+        <script src="js/dark-unica.js"></script>  
+<script src="js/highcharts-3d.js"></script>
+<script src="js/highcharts-more.js"></script>
+<script src="js/solid-gauge.js"></script>
+    
+         <!-- <script src="js/indector.js"></script>  -->
+    <script src="js/indector.js"></script>
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </head>
+
 
 <body class="about">
 
@@ -95,6 +153,7 @@
                 </div>
                 <!-- row End -->
             </div>
+
             <!-- container End -->
         </div>
         <!-- Header-Top End -->
@@ -117,7 +176,7 @@
                         <nav id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="index.html">主页</a></li>
-                                <li><a href="about.html">远程监控</a></li>
+                                <li><a href="about.html">实时监控</a></li>
                                 <li><a href="hosting.html">历史数据</a></li>
                                 <li><a href="domain-search.html">寿命预测</a></li>
                                 <li><a href="service.html">计算性能</a></li>
@@ -159,7 +218,7 @@
                 <div class="col-xs-12">
                     <div class="romana_allPage_text text-center">
                       
-                        <h1>远程监控</h1>
+                        <h1>实时监控</h1>
                        
                     </div>
                 </div>
@@ -169,91 +228,99 @@
         </div>
         <!-- container End -->
     </div>
-<!-- ==========================================================
-3.*romana_awesome_service_area start
-============================================================ -->
-    <div class="romana_welcome_webhost_area romana_section_padding">
-        <div class="container">
-            <div class="row ">
-                <div class="col-sm-6">
-                    <div class="romana_welcome_img">
-                        <a href="#"><img src="css/shortcuts/welcome_img.jpg" alt=""></a>
-                    </div>
-                </div>
-                <!-- column End -->
-                <div class="col-sm-6">
-                    <div class="romana_welcome_text">
-                        <h2>Welcome to Webhost</h2>
-                        <p class="romana_margin_bottom30">Duis autem vel eum mriure dolor in hendrerit vulputate esse molestiec nsequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accum sanet usto odio dignissim qui blandit praesent luptatum augue duis dore te feugait nulla facilisi.</p>
-                        <p>Duis autem vel eum mriure dolor in hendrerit in vulputate velit esse molestiec usto odio dignissim qui blandit praesent luptatum augue duis dore te feugait nulla facilisi.</p>
-                    </div>
-                </div>
-                <!-- column End -->
-            </div>
-            <!-- row End -->
-        </div>
-        <!-- container End -->
-    </div>
+   <br/>
 
 <!-- ==========================================================
 5.*Client_area start
 ============================================================ -->
-    <div class="romana_client_area romana_section_padding_bottom" align="center">
-       <iframe
-  width="600"
-  height="400"
-  seamless
-  frameBorder="10"
-  scrolling="no"
-  src="http://tsdb.neuseer.com:8089/neucloud/explore/druid/153/?form_data=%7B%22datasource%22%3A%22153__druid%22%2C%22viz_type%22%3A%22bar%22%2C%22slice_id%22%3A62%2C%22granularity%22%3A%22one+day%22%2C%22druid_time_origin%22%3Anull%2C%22since%22%3A%2290+days+ago%22%2C%22until%22%3A%22now%22%2C%22metrics%22%3A%5B%22count%22%5D%2C%22groupby%22%3A%5B%22no%22%5D%2C%22limit%22%3A100%2C%22timeseries_limit_metric%22%3A%22count%22%2C%22show_brush%22%3Atrue%2C%22show_legend%22%3Atrue%2C%22show_bar_value%22%3Afalse%2C%22rich_tooltip%22%3Atrue%2C%22contribution%22%3Afalse%2C%22line_interpolation%22%3A%22linear%22%2C%22bar_stacked%22%3Afalse%2C%22bottom_margin%22%3A%22auto%22%2C%22show_controls%22%3Afalse%2C%22x_axis_format%22%3A%22smart_date%22%2C%22y_axis_format%22%3A%22.3s%22%2C%22x_axis_showminmax%22%3Atrue%2C%22reduce_x_ticks%22%3Afalse%2C%22x_axis_label%22%3A%22time%22%2C%22y_axis_label%22%3A%22number%22%2C%22y_axis_bounds%22%3A%5B0%2C1200%5D%2C%22y_log_scale%22%3Afalse%2C%22rolling_type%22%3A%22None%22%2C%22time_compare%22%3Anull%2C%22num_period_compare%22%3A%22%22%2C%22period_ratio_type%22%3A%22growth%22%2C%22resample_how%22%3Anull%2C%22resample_rule%22%3Anull%2C%22resample_fillmethod%22%3Anull%2C%22filters%22%3A%5B%5D%2C%22having_filters%22%3A%5B%5D%7D&standalone=true&height=400&kiosk=true"
->
-</iframe>
+   <div id="choose" align="center">
+   <div class="romana_hero2_text">
+    <strong>数据通道选择 ：</strong><select onchange="changeChart()" id="page" style="width:150px" > 
+    </div>
+     <option value="SET1" >SET1</option> 
+      <option value="SET2" >SET2</option> 
+       <option value="SET3" >SET3</option> 
+        <option value="Sensor1" >Sensor1</option> 
+         <option value="Sensor2" >Sensor2</option> 
+          <option value="Sensor3" >Sensor3</option> 
+           <option value="Sensor4" >Sensor4</option> 
+            <option value="Sensor5" >Sensor5</option> 
+             <option value="Sensor6" >Sensor6</option> 
+              <option value="Sensor7" >Sensor7</option> 
+               <option value="Sensor8" >Sensor8</option> 
+                <option value="Sensor9" >Sensor9</option> 
+                 <option value="Sensor10" >Sensor10</option> 
+                  <option value="Sensor11" >Sensor11</option> 
+                   <option value="Sensor12" >Sensor12</option> 
+                    <option value="Sensor13" >Sensor13</option> 
+                     <option value="Sensor14" >Sensor14</option> 
+                      <option value="Sensor15" >Sensor15</option> 
+                       <option value="Sensor16" >Sensor16</option> 
+                        <option value="Sensor17" >Sensor17</option> 
+                         <option value="Sensor18" >Sensor18</option> 
+                          <option value="Sensor19" >Sensor19</option> 
+                            <option value="Sensor20" >Sensor20</option> 
+                             <option value="Sensor21" >Sensor21</option> 
+                              <option value="unit_num" >unit_num</option> 
+
+    </select>  </br>
+  
+   </div>
+   
+    <div class="romana_client_area romana_section_padding_bottom" align="center" id="show">
+ 
+    
+
+<!--图一  -->
+
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=2&orgId=36&from=1545031881519&to=1545032181519" width="850" height="400" frameborder="0" id="SET1"></iframe>
+
+<div id="container-tx" style="min-width: 310px; height: 200px; margin: 0 auto;width: 20%;float:right;margin-top: 10px;margin-right:10%"></div>
 
 
-<iframe
-  width="600"
-  height="400"
-  seamless
-  frameBorder="10"
-  scrolling="no"
-  src="http://tsdb.neuseer.com:8089/neucloud/explore/druid/153/?form_data=%7B%22datasource%22%3A%22153__druid%22%2C%22viz_type%22%3A%22pie%22%2C%22slice_id%22%3A69%2C%22granularity%22%3A%22one+day%22%2C%22druid_time_origin%22%3A%22%22%2C%22since%22%3A%227+days+ago%22%2C%22until%22%3A%22now%22%2C%22metrics%22%3A%5B%22count%22%5D%2C%22groupby%22%3A%5B%22id%22%5D%2C%22limit%22%3A50%2C%22pie_label_type%22%3A%22key%22%2C%22donut%22%3Afalse%2C%22show_legend%22%3Atrue%2C%22labels_outside%22%3Atrue%2C%22filters%22%3A%5B%5D%2C%22having_filters%22%3A%5B%5D%7D&standalone=true&height=400&kiosk=true"
->
-</iframe>
+
+
+<!-- 
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=4&orgId=36&from=1545032002319&to=1545032302319" width="850" height="400" frameborder="0" id="SET2" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=6&orgId=36&from=1545032533711&to=1545032833711" width="850" height="400" frameborder="0" id="SET3" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=7&from=1545033512889&to=1545033812889" width="850" height="400" frameborder="0" id="Sensor1" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=8&from=1545033693424&to=1545033993424" width="850" height="400" frameborder="0" id="Sensor2" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=9&from=1545033738018&to=1545034038018" width="850" height="400" frameborder="0" id="Sensor3" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=11&from=1545033777395&to=1545034077395" width="850" height="400" frameborder="0" id="Sensor4" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=10&from=1545033826093&to=1545034126094" width="850" height="400" frameborder="0" id="Sensor5" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=12&from=1545033872310&to=1545034172310" width="850" height="400" frameborder="0" id="Sensor6" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=13&from=1545033946754&to=1545034246754" width="850" height="400" frameborder="0" id="Sensor7" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=14&from=1545033996858&to=1545034296858" width="850" height="400" frameborder="0" id="Sensor8" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=15&from=1545034027994&to=1545034327994" width="850" height="400" frameborder="0" id="Sensor9" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=16&from=1545034062391&to=1545034362391" width="850" height="400" frameborder="0" id="Sensor10" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=17&from=1545034247654&to=1545034547654" width="850" height="400" frameborder="0" id="Sensor11" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=18&from=1545034310976&to=1545034610976" width="850" height="400" frameborder="0" id="Sensor12" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=19&from=1545034348488&to=1545034648488" width="850" height="400" frameborder="0" id="Sensor13" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=20&from=1545034381247&to=1545034681247" width="850" height="400" frameborder="0" id="Sensor14" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=21&from=1545034419377&to=1545034719377" width="850" height="400" frameborder="0" id="Sensor15" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=22&from=1545034446222&to=1545034746222" width="850" height="400" frameborder="0" id="Sensor16" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=25&from=1545034479916&to=1545034779916" width="850" height="400" frameborder="0" id="Sensor17" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=24&from=1545034507399&to=1545034807399" width="850" height="400" frameborder="0" id="Sensor18" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=23&from=1545034558540&to=1545034858540" width="850" height="400" frameborder="0" id="Sensor19" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=26&from=1545034597516&to=1545034897516" width="850" height="400" frameborder="0" id="Sensor20" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=29&from=1545034633742&to=1545034933742" width="850" height="400" frameborder="0" id="Sensor21" style="display:none"></iframe>
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=28&from=1545034662759&to=1545034962759" width="850" height="400" frameborder="0" id="unit_num" style="display:none"></iframe>
+ -->
+
+
+
+</br>
+<input type="button" value="全部数据展示" onclick="show()"/>
+<div id="panel3">
 
 
 
 
-<iframe
-  width="600"
-  height="400"
-  seamless
-  frameBorder="10"
-  scrolling="no"
-  src="http://tsdb.neuseer.com:8089/neucloud/explore/druid/153/?form_data=%7B%22datasource%22%3A%22153__druid%22%2C%22viz_type%22%3A%22compare%22%2C%22slice_id%22%3A68%2C%22granularity%22%3A%22week%22%2C%22druid_time_origin%22%3Anull%2C%22since%22%3A%2290+days+ago%22%2C%22until%22%3A%22now%22%2C%22metrics%22%3A%5B%22count%22%5D%2C%22groupby%22%3A%5B%5D%2C%22limit%22%3A50%2C%22timeseries_limit_metric%22%3A%22count%22%2C%22x_axis_format%22%3A%22smart_date%22%2C%22y_axis_format%22%3A%22.3s%22%2C%22rolling_type%22%3A%22None%22%2C%22time_compare%22%3Anull%2C%22num_period_compare%22%3A%22%22%2C%22period_ratio_type%22%3A%22growth%22%2C%22resample_how%22%3Anull%2C%22resample_rule%22%3Anull%2C%22resample_fillmethod%22%3Anull%2C%22filters%22%3A%5B%5D%2C%22having_filters%22%3A%5B%5D%7D&standalone=true&height=400&kiosk=true"
->
-</iframe>
+
+</div>
+</br>
 
 
-<iframe
-  width="600"
-  height="400"
-  seamless
-  frameBorder="10"
-  scrolling="no"
-  src="http://tsdb.neuseer.com:8089/neucloud/explore/druid/153/?form_data=%7B%22datasource%22%3A%22153__druid%22%2C%22viz_type%22%3A%22word_cloud%22%2C%22slice_id%22%3A64%2C%22granularity%22%3A%22one+day%22%2C%22druid_time_origin%22%3Anull%2C%22since%22%3A%227+days+ago%22%2C%22until%22%3A%22now%22%2C%22series%22%3A%22id%22%2C%22metric%22%3A%22count%22%2C%22limit%22%3A50%2C%22size_from%22%3A%2220%22%2C%22size_to%22%3A%22150%22%2C%22rotation%22%3A%22flat%22%2C%22filters%22%3A%5B%5D%2C%22having_filters%22%3A%5B%5D%7D&standalone=true&height=400&kiosk=true"
->
-</iframe>
-
-
-<iframe
-  width="600"
-  height="400"
-  seamless
-  frameBorder="10"
-  scrolling="no"
-  src="http://tsdb.neuseer.com:8089/neucloud/explore/druid/153/?form_data=%7B%22datasource%22%3A%22153__druid%22%2C%22viz_type%22%3A%22bubble%22%2C%22slice_id%22%3A66%2C%22granularity%22%3A%22week%22%2C%22druid_time_origin%22%3A%22%22%2C%22since%22%3A%2228+days+ago%22%2C%22until%22%3A%22now%22%2C%22series%22%3Anull%2C%22entity%22%3A%22id%22%2C%22size%22%3A%22sum__no%22%2C%22limit%22%3A50%2C%22show_legend%22%3Atrue%2C%22max_bubble_size%22%3A%2250%22%2C%22x%22%3A%22count%22%2C%22x_axis_format%22%3A%22.3s%22%2C%22x_axis_label%22%3A%22%22%2C%22x_log_scale%22%3Afalse%2C%22y%22%3A%22min__no%22%2C%22y_axis_format%22%3A%22.3s%22%2C%22y_axis_label%22%3A%22%22%2C%22y_log_scale%22%3Afalse%2C%22filters%22%3A%5B%5D%2C%22having_filters%22%3A%5B%5D%7D&standalone=true&height=400&kiosk=true"
->
-</iframe>
 
         
     </div>
@@ -296,6 +363,139 @@
 
     <!-- ================= Active Js ================== -->
     <script src="js/active.js"></script>
+    
+    <script type="text/javascript">
+    
+    var SET2="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=4&orgId=36&from=1545032002319&to=1545032302319' width='850' height='400' frameborder='0' id='SET2' ></iframe>"
+    var Sensor1="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=7&from=1545033512889&to=1545033812889' width='850' height='400' frameborder='0' id='Sensor1' ></iframe>"	
+    		
+    var curr="SET1"
+    function changeChart(){  
+    	 
+      var Curriframe = document.getElementById(curr);
+    	       //获取被选中的option标签 
+    	     var now = $('select  option:selected').val(); 
+    	     // Curriframe.style="display:block";
+    	  
+    	      if(now=="SET2"){
+    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=4&orgId=36&from=1545032002319&to=1545032302319' width='850' height='400' frameborder='0' id='SET2' ></iframe>";
+    	    
+    	      }
+    	      if(now=="SET3"){
+    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=6&orgId=36&from=1545032533711&to=1545032833711' width='850' height='400' frameborder='0' id='SET3' ></iframe>";
+    	    	      }
+    	      if(now=="Sensor1"){
+    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=7&from=1545033512889&to=1545033812889' width='850' height='400' frameborder='0' id='Sensor1' ></iframe>";
+    		       
+    	     }
+    	      if(now=="Sensor2"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=8&from=1545033693424&to=1545033993424' width='850' height='400' frameborder='0' id='Sensor2' ></iframe>;"
+ 		       
+ 	     }
+    	      
+    	      
+    	      if(now=="Sensor3"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=9&from=1545033738018&to=1545034038018' width='850' height='400' frameborder='0' id='Sensor3' ></iframe>"
+ 		       
+ 	     }
+    	      if(now=="Sensor4"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=11&from=1545033777395&to=1545034077395' width='850' height='400' frameborder='0' id='Sensor4' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor5"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=10&from=1545033826093&to=1545034126094' width='850' height='400' frameborder='0' id='Sensor5' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor6"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=12&from=1545033872310&to=1545034172310' width='850' height='400' frameborder='0' id='Sensor6' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor7"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=13&from=1545033946754&to=1545034246754' width='850' height='400' frameborder='0' id='Sensor7' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor8"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=14&from=1545033996858&to=1545034296858' width='850' height='400' frameborder='0' id='Sensor8' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor9"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=15&from=1545034027994&to=1545034327994' width='850' height='400' frameborder='0' id='Sensor9' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor10"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=16&from=1545034062391&to=1545034362391' width='850' height='400' frameborder='0' id='Sensor10' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor11"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=17&from=1545034247654&to=1545034547654' width='850' height='400' frameborder='0' id='Sensor11' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor12"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=18&from=1545034310976&to=1545034610976' width='850' height='400' frameborder='0' id='Sensor12' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor13"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=19&from=1545034348488&to=1545034648488' width='850' height='400' frameborder='0' id='Sensor13' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor14"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=20&from=1545034381247&to=1545034681247' width='850' height='400' frameborder='0' id='Sensor14' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor15"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=21&from=1545034419377&to=1545034719377' width='850' height='400' frameborder='0' id='Sensor15' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor16"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=22&from=1545034446222&to=1545034746222' width='850' height='400' frameborder='0' id='Sensor16' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor17"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=25&from=1545034479916&to=1545034779916' width='850' height='400' frameborder='0' id='Sensor17' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor18"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=24&from=1545034507399&to=1545034807399' width='850' height='400' frameborder='0' id='Sensor18' ></iframe>";
+ 		       
+ 	     }
+    	     
+    	      if(now=="Sensor19"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=23&from=1545034558540&to=1545034858540' width='850' height='400' frameborder='0' id='Sensor19' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor20"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=26&from=1545034597516&to=1545034897516' width='850' height='400' frameborder='0' id='Sensor20' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="Sensor21"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=29&from=1545034633742&to=1545034933742' width='850' height='400' frameborder='0' id='Sensor21' ></iframe>";
+ 		       
+ 	     }
+    	      if(now=="unit_num"){
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=28&from=1545034662759&to=1545034962759' width='850' height='400' frameborder='0' id='unit_num' ></iframe>";
+ 		       
+ 	     }
+    	      	     
+    	      
+    	     curr=now;
+    	 }  
+    
+
+  
+    
+    
+    
+    
+    function show() {
+		var iframe="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=3s&orgId=36&from=1545051612299&to=1545051912299&kiosk=true' width='1500' height='4000' frameborder='0'></iframe>";
+    	
+		  document.getElementById('panel3').innerHTML="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=3s&orgId=36&from=1545051612299&to=1545051912299&kiosk=true' width='1500' height='4000' frameborder='0'></iframe>";
+    	
+	}
+    
+    </script>
+    
+    
 
 </body>
 

@@ -46,10 +46,12 @@
       <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="css/chart.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="home">
 
+     
      
 
 
@@ -117,7 +119,7 @@
                         <nav id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="index.html">主页</a></li>
-                                <li><a href="about.html">远程监控</a></li>
+                                <li><a href="about.html">实时监控</a></li>
                                 <li><a href="hosting.html">历史数据</a></li>
                                 <li><a href="domain-search.html">寿命预测</a></li>
                                 <li><a href="service.html">计算性能</a></li>
@@ -159,7 +161,7 @@
                 <div class="col-xs-12">
                     <div class="romana_allPage_text text-center">
                     
-                        <h1>特征分析</h1>
+                        <h1>历史数据回溯</h1>
                         
                     </div>
                 </div>
@@ -169,61 +171,61 @@
         </div>
         <!-- container End -->
     </div>
-<!-- ==========================================================
-3.*romana_hosting_plan_area start
-============================================================ -->
-    <div class="romana_hosting_plan_area romana_hosting_plan_area3">
-        <div class="container">
-            <!-- row End -->
-            <div class="row ">
-                <div class="col-sm-4 col-xs-12">
-                    <div class="romana_single_plan">
-                        <div class="romana_plan_icon hvr-grow">
-                            <a href="#"><img src="css/shortcuts/plan_icon1.png" alt="icon"></a>
-                        </div>
-                        <h3>Choose Your Domain</h3>
-                        <p>Duis autem vel eum iriure dolor in henshe vulputate velit esse molestie andnse</p>
-                    </div>
-                </div>
-                <!-- column End -->
-                <div class="col-sm-4 col-xs-12">
-                    <div class="romana_single_plan romana_single_plan_before">
-                        <div class="romana_plan_icon hvr-grow">
-                            <a href="#"><img src="css/shortcuts/plan_icon4.png" alt="icon"></a>
-                        </div>
-                        <h3>Creat Your Account</h3>
-                        <p>Duis autem vel eum iriure dolor in henshe vulputate velit esse molestie andnse</p>
-                    </div>
-                </div>
-                <!-- column End -->
-                <div class="col-sm-4 col-xs-12">
-                    <div class="romana_single_plan romana_single_plan_before">
-                        <div class="romana_plan_icon hvr-grow">
-                            <a href="#"><img src="css/shortcuts/plan_icon5.png" alt="icon"></a>
-                        </div>
-                        <h3>Launch Your Website</h3>
-                        <p>Duis autem vel eum iriure dolor in henshe vulputate velit esse molestie andnse</p>
-                    </div>
-                </div>
-                <!-- column End -->
-            </div>
-            <!-- row End -->
-        </div>
-        <!-- container End -->
-    </div>
 
-
-
-<div align="center">
-<iframe src="https://vis.neuseer.cn/d/sQASB8Eik/gong-ye-appda-sai-shi-li?orgId=10&from=1544754641258&to=1544776241258&kiosk=true" 
-style="width:1200px;height:800px;" ></iframe>
+       
+       
+       <!-- 历史数据查询部分 -->
+       
+       <script  src="js/echarts.min.js"></script>
+<script  src="js/jquery-1.9.1.min.js"></script>
+      <script  src="js/record.js"></script> 
+       
+       <div class="btn-group" data-toggle="buttons" style="margin-left: 20%">
+起始时间:<input type="datetime-local" value="2018-12-17T23:01:34"
+							id="beginTime" /> 结束时间:<input type="datetime-local"
+							value="2018-12-17T23:02:34" id="endTime" />
 </div>
-   
+<div class="btn-group" data-toggle="buttons" style="margin-left: 70%">
        
-       
-       
-       
+             
+               数据通道选择 ：  <select onchange="changeChart()" id="page" style="width:150px" > 
+     <option value="SET1" >SET1</option> 
+      <option value="SET2" >SET2</option> 
+       <option value="SET3" >SET3</option> 
+        <option value="Sensor1" >Sensor1</option> 
+         <option value="Sensor2" >Sensor2</option> 
+          <option value="Sensor3" >Sensor3</option> 
+           <option value="Sensor4" >Sensor4</option> 
+            <option value="Sensor5" >Sensor5</option> 
+             <option value="Sensor6" >Sensor6</option> 
+              <option value="Sensor7" >Sensor7</option> 
+               <option value="Sensor8" >Sensor8</option> 
+                <option value="Sensor9" >Sensor9</option> 
+                 <option value="Sensor10" >Sensor10</option> 
+                  <option value="Sensor11" >Sensor11</option> 
+                   <option value="Sensor12" >Sensor12</option> 
+                    <option value="Sensor13" >Sensor13</option> 
+                     <option value="Sensor14" >Sensor14</option> 
+                      <option value="Sensor15" >Sensor15</option> 
+                       <option value="Sensor16" >Sensor16</option> 
+                        <option value="Sensor17" >Sensor17</option> 
+                         <option value="Sensor18" >Sensor18</option> 
+                          <option value="Sensor19" >Sensor19</option> 
+                            <option value="Sensor20" >Sensor20</option> 
+                             <option value="Sensor21" >Sensor21</option> 
+                              <option value="unit_num" >unit_num</option> 
+
+    </select> 
     </div>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="line" style="width: 95%; height: 400px;"></div>
+   
+ 
+ 
+ 
+ 
+ 
+ <!--end  -->
 <!--10.*Footer_area start
 =================================================== -->
     <footer class="romana_footer_area">
