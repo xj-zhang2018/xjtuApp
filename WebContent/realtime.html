@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -79,7 +79,7 @@
         
         <script src="js/highcharts.js"></script>
         <script src="js/exporting.js"></script>
-        <script src="js/dark-unica.js"></script>  
+        <script src="js/grid-light.js"></script>  
 <script src="js/highcharts-3d.js"></script>
 <script src="js/highcharts-more.js"></script>
 <script src="js/solid-gauge.js"></script>
@@ -87,19 +87,6 @@
          <!-- <script src="js/indector.js"></script>  -->
     <script src="js/indector.js"></script>
    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -176,9 +163,9 @@
                         <nav id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="index.html">主页</a></li>
-                                <li><a href="about.html">实时监控</a></li>
-                                <li><a href="hosting.html">历史数据</a></li>
-                                <li><a href="domain-search.html">寿命预测</a></li>
+                                <li><a href="realtime.html">实时监控</a></li>
+                                <li><a href="historytime.html">历史数据</a></li>
+                                <li><a href="rul.html">寿命预测</a></li>
                                 <li><a href="service.html">计算性能</a></li>
                                 <li><a href="contact.html">关于我们</a></li>
                             </ul>
@@ -187,16 +174,16 @@
                         <!-- nav End -->
                     </div>
                     <!-- column End -->
-                    <div class="col-sm-2">
+                     <div class="col-sm-2">
                         <div class="romana_client_btn hidden-xs">
                             <a href="#" class="hvr-bounce-to-right"><i class="icofont icofont-user-alt-3"></i>用户登录</a>
                         </div>
                         <div class="romana_client_log_in">
                             <form action="#" class="romana_client_log_in_after">
-                                <input type="text" name="clientEmail" placeholder="Email here">
-                                <input type="text" name="clientPass" placeholder="password">
-                                <input type="submit" value="Login">
-                                <p> or <a href="registration.html">registration</a></p>
+                                <input type="text" name="clientEmail" placeholder="邮箱/手机">
+                                <input type="text" name="clientPass" placeholder="密码">
+                                <input type="submit" value="登录">
+                                <p> or <a href="registration.html">注册</a></p>
                             </form>
                         </div>
                     </div>
@@ -212,11 +199,11 @@
 <!-- ==========================================================
 2.*Hero_area start
 ============================================================ -->
-    <div class="romana_allPage_area">
+    <div class="romana_allPage_area2">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="romana_allPage_text text-center">
+                    <div class="romana_allPage_text2">
                       
                         <h1>实时监控</h1>
                        
@@ -234,9 +221,9 @@
 5.*Client_area start
 ============================================================ -->
    <div id="choose" align="center">
-   <div class="romana_hero2_text">
-    <strong>数据通道选择 ：</strong><select onchange="changeChart()" id="page" style="width:150px" > 
-    </div>
+     <div class="romana_hero2_text">
+    <strong>数据通道选择 ： </strong>  <select onchange="changeChart()" id="page" style="width:150px" > 
+     </div>
      <option value="SET1" >SET1</option> 
       <option value="SET2" >SET2</option> 
        <option value="SET3" >SET3</option> 
@@ -266,23 +253,46 @@
     </select>  </br>
   
    </div>
+       
+<div   style="center">
+<table border="2" cellspacing="2" >
+    <thead >
+        <th>&nbsp&nbsp数据通道&nbsp&nbsp</th>
+        <th>&nbsp&nbsp方差&nbsp&nbsp</th>
+        <th>&nbsp&nbsp均值&nbsp&nbsp</th>
+        <th>&nbsp&nbsp最大&nbsp&nbsp</th>
+        <th>&nbsp&nbsp最小&nbsp&nbsp</th>
+    </thead>
+    <tbody id="table"></tbody>
+</table>
+</div>
    
     <div class="romana_client_area romana_section_padding_bottom" align="center" id="show">
-<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=2&orgId=36&from=1545031881519&to=1545032181519" width="850" height="400" frameborder="0" id="SET1"></iframe>
+<!--图一  -->
+<iframe src="https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=2" width="850" height="400" frameborder="0" id="SET1"></iframe>
     </div>
-<div id="container-tx" style="min-width: 20px; height: 50px; margin: 0 auto;width: 20%;float:right;margin-top: 10px;margin-right:10%"></div>
+<!-- <div id="container-tx" style="min-width: 310px; height: 200px; margin: 0 auto;width: 20%;float:right;margin-top: 10px;margin-right:10%"></div> -->
 
-</br>
-<input type="button" value="全部数据展示" onclick="show()"/>
+
+
+
+
+
+
+ 
+ <div class="romana_slider_btn">
+<a onclick="show()" class="romana_slider_btn1 hvr-shutter-out-horizontal">全部数据展示<i></i></a>
+ </div>
+
 <div id="panel3">
-
-
-
-
-
 </div>
 </br>
-     
+
+
+
+        
+    
+    
 <!--10.*Footer_area start
 =================================================== -->
     <footer class="romana_footer_area">
@@ -325,7 +335,7 @@
     
     <script type="text/javascript">
     
-    var SET2="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=4&orgId=36&from=1545032002319&to=1545032302319' width='850' height='400' frameborder='0' id='SET2' ></iframe>"
+    var SET2="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=4&fullscreen' width='850' height='400' frameborder='0' id='SET2' ></iframe>"
     var Sensor1="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=7&from=1545033512889&to=1545033812889' width='850' height='400' frameborder='0' id='Sensor1' ></iframe>"	
     		
     var curr="SET1"
@@ -337,104 +347,104 @@
     	     // Curriframe.style="display:block";
     	  
     	      if(now=="SET2"){
-    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=4&orgId=36&from=1545032002319&to=1545032302319' width='850' height='400' frameborder='0' id='SET2' ></iframe>";
+    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=4' width='850' height='400' frameborder='0' id='SET2' ></iframe>";
     	    
     	      }
     	      if(now=="SET3"){
-    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?panelId=6&orgId=36&from=1545032533711&to=1545032833711' width='850' height='400' frameborder='0' id='SET3' ></iframe>";
+    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=6' width='850' height='400' frameborder='0' id='SET3' ></iframe>";
     	    	      }
     	      if(now=="Sensor1"){
-    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=7&from=1545033512889&to=1545033812889' width='850' height='400' frameborder='0' id='Sensor1' ></iframe>";
+    	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=7' width='850' height='400' frameborder='0' id='Sensor1' ></iframe>";
     		       
     	     }
     	      if(now=="Sensor2"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=8&from=1545033693424&to=1545033993424' width='850' height='400' frameborder='0' id='Sensor2' ></iframe>;"
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=8' width='850' height='400' frameborder='0' id='Sensor2' ></iframe>;"
  		       
  	     }
     	      
     	      
     	      if(now=="Sensor3"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=9&from=1545033738018&to=1545034038018' width='850' height='400' frameborder='0' id='Sensor3' ></iframe>"
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=9' width='850' height='400' frameborder='0' id='Sensor3' ></iframe>"
  		       
  	     }
     	      if(now=="Sensor4"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=11&from=1545033777395&to=1545034077395' width='850' height='400' frameborder='0' id='Sensor4' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=11' width='850' height='400' frameborder='0' id='Sensor4' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor5"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=10&from=1545033826093&to=1545034126094' width='850' height='400' frameborder='0' id='Sensor5' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=10' width='850' height='400' frameborder='0' id='Sensor5' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor6"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=12&from=1545033872310&to=1545034172310' width='850' height='400' frameborder='0' id='Sensor6' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=12' width='850' height='400' frameborder='0' id='Sensor6' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor7"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=13&from=1545033946754&to=1545034246754' width='850' height='400' frameborder='0' id='Sensor7' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=13' width='850' height='400' frameborder='0' id='Sensor7' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor8"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=14&from=1545033996858&to=1545034296858' width='850' height='400' frameborder='0' id='Sensor8' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=14' width='850' height='400' frameborder='0' id='Sensor8' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor9"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=15&from=1545034027994&to=1545034327994' width='850' height='400' frameborder='0' id='Sensor9' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=15' width='850' height='400' frameborder='0' id='Sensor9' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor10"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=16&from=1545034062391&to=1545034362391' width='850' height='400' frameborder='0' id='Sensor10' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=16' width='850' height='400' frameborder='0' id='Sensor10' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor11"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=17&from=1545034247654&to=1545034547654' width='850' height='400' frameborder='0' id='Sensor11' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=17' width='850' height='400' frameborder='0' id='Sensor11' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor12"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=18&from=1545034310976&to=1545034610976' width='850' height='400' frameborder='0' id='Sensor12' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=18' width='850' height='400' frameborder='0' id='Sensor12' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor13"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=19&from=1545034348488&to=1545034648488' width='850' height='400' frameborder='0' id='Sensor13' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=19' width='850' height='400' frameborder='0' id='Sensor13' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor14"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=20&from=1545034381247&to=1545034681247' width='850' height='400' frameborder='0' id='Sensor14' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=20' width='850' height='400' frameborder='0' id='Sensor14' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor15"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=21&from=1545034419377&to=1545034719377' width='850' height='400' frameborder='0' id='Sensor15' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=21' width='850' height='400' frameborder='0' id='Sensor15' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor16"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=22&from=1545034446222&to=1545034746222' width='850' height='400' frameborder='0' id='Sensor16' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=22' width='850' height='400' frameborder='0' id='Sensor16' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor17"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=25&from=1545034479916&to=1545034779916' width='850' height='400' frameborder='0' id='Sensor17' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=25' width='850' height='400' frameborder='0' id='Sensor17' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor18"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=24&from=1545034507399&to=1545034807399' width='850' height='400' frameborder='0' id='Sensor18' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=24' width='850' height='400' frameborder='0' id='Sensor18' ></iframe>";
  		       
  	     }
     	     
     	      if(now=="Sensor19"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=23&from=1545034558540&to=1545034858540' width='850' height='400' frameborder='0' id='Sensor19' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=23' width='850' height='400' frameborder='0' id='Sensor19' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor20"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=26&from=1545034597516&to=1545034897516' width='850' height='400' frameborder='0' id='Sensor20' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=26' width='850' height='400' frameborder='0' id='Sensor20' ></iframe>";
  		       
  	     }
     	      if(now=="Sensor21"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=29&from=1545034633742&to=1545034933742' width='850' height='400' frameborder='0' id='Sensor21' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=29' width='850' height='400' frameborder='0' id='Sensor21' ></iframe>";
  		       
  	     }
     	      if(now=="unit_num"){
- 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?orgId=36&panelId=28&from=1545034662759&to=1545034962759' width='850' height='400' frameborder='0' id='unit_num' ></iframe>";
+ 	    	     document.getElementById('show').innerHTML="<iframe src='https://vis.yeseer.cn/d-solo/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36&panelId=28' width='850' height='400' frameborder='0' id='unit_num' ></iframe>";
  		       
  	     }
-    	      	     
+    	      upDateTable(now)
     	      
     	     curr=now;
     	 }  
@@ -446,11 +456,58 @@
     
     
     function show() {
-		var iframe="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=3s&orgId=36&from=1545051612299&to=1545051912299&kiosk=true' width='1500' height='4000' frameborder='0'></iframe>";
+		var iframe="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36' width='1500' height='4000' frameborder='0'></iframe>";
     	
-		  document.getElementById('panel3').innerHTML="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=3s&orgId=36&from=1545051612299&to=1545051912299&kiosk=true' width='1500' height='4000' frameborder='0'></iframe>";
+		  document.getElementById('panel3').innerHTML="<iframe src='https://vis.yeseer.cn/d/a-ncXePik/shi-shi-shu-ju?refresh=30s&orgId=36' width='1500' height='4000' frameborder='0'></iframe>";
     	
 	}
+    
+    
+    
+    function upDateTable(datapoint){ 
+   	//CearTableAllRow();
+   	 var max=23
+   	 var min=34
+   	 var variance=2.4
+   	 var avg=12
+   	 
+   	 var testTbody = $("#table");
+   	var obj={type:"POST",url:"GetParm"};
+		
+		$.post("GetParm", {"datapoint":datapoint},
+				   function(parm){
+		
+   			 var test = "<tr>" + 
+   			 "<td>" + datapoint + "</td>" +
+   	         "<td>" + parm.variance + "</td>" +
+   	         "<td>" + parm.avg + "</td>" +
+   	         "<td>" + parm.max + "</td>" +
+   	         "<td>" + parm.min + "</td>" +
+   	         "</tr>";
+   	           testTbody.append(test);
+		
+		
+		
+		
+		
+		});
+   	 
+   	 
+   }
+    
+    
+    
+    
+    function CearTableAllRow() {
+	    var table = document.getElementById("table"),
+	        trs = table.getElementsByTagName("tr");
+	           
+	    for(var i = trs.length - 1; i > 0; i--) {
+	        table.deleteRow(i);
+	    }
+	}
+    
+    
     
     </script>
     

@@ -25,7 +25,7 @@ public class Dao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-		   /* String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+		    /*String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "root";
 			String password = "123456";*/
 			
@@ -33,6 +33,10 @@ public class Dao {
 			String url = "jdbc:mysql://172.30.159.167:3306/app4sql?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "userA8S";
 			String password = "siJEKXHkEcf5F7xw";
+			
+			
+			
+			
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -115,10 +119,11 @@ public param Getindicator(String datapoint)  {
 	Statement sql_statement;
 	 double max=0;
      double min=0;
-     double VARIANCE=0;
+     double variance=0;
+     double avg=0;
      param parm=null;
 	try {
-		String sql="select max(value) ,min(value),VARIANCE(value)from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
+		String sql="select max(value) ,min(value),VARIANCE(value),avg(value) from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
 		 sql_statement = (Statement) con.createStatement();
 		 ResultSet result = sql_statement.executeQuery(sql);
          
@@ -126,9 +131,10 @@ public param Getindicator(String datapoint)  {
          {
              max= result.getDouble(1);
              min= result.getDouble(2);
-             VARIANCE=result.getDouble(3);
-             parm=new param(max, min, VARIANCE);
-             System.out.println(" max :" + max + "min " + min + "鏂瑰樊 " + VARIANCE); 
+             variance=result.getDouble(3);
+             avg=result.getDouble(4);
+             parm=new param(max, min, variance,avg);
+             System.out.println(" max :" + max + "min " + avg + "鏂瑰樊 " + variance+","+avg); 
          }
                  
                 

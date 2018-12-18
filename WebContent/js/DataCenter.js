@@ -80,7 +80,7 @@ $(document).ready(
 		        min: 0,
 		        max: 100,
 		        title: {
-		            text: 'CPU利用率'
+		            text: ' '
 		        }
 		    },
 
@@ -110,7 +110,7 @@ $(document).ready(
 		        min: 0,
 		        max: 100,
 		        title: {
-		            text: '磁盘利用率'
+		            text: ' '
 		        }
 		    },
 
@@ -140,7 +140,7 @@ $(document).ready(
 		        min: 0,
 		        max: 100,
 		        title: {
-		            text: '内存利用率'
+		            text: ' '
 		        }
 		    },
 

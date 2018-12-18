@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -82,9 +82,9 @@
         
         <script src="js/highcharts.js"></script>
         <script src="js/exporting.js"></script>
-        <script src="js/dark-unica.js"></script>  
+        <script src="js/grid-light.js"></script>  
         
-         <script src="js/UserData.js"></script> 
+        <!--  <script src="js/UserData.js"></script>  -->
          <script src="js/cpu.js"></script> 
          <script src="js/network.js"></script> 
          <script src="js/DataCenter.js"></script>  
@@ -164,9 +164,9 @@
                         <nav id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="index.html">主页</a></li>
-                                <li><a href="about.html">实时监控</a></li>
-                                <li><a href="hosting.html">历史数据</a></li>
-                                <li><a href="domain-search.html">寿命预测</a></li>
+                                <li><a href="realtime.html">实时监控</a></li>
+                                <li><a href="historytime.html">历史数据</a></li>
+                                <li><a href="rul.html">寿命预测</a></li>
                                 <li><a href="service.html">计算性能</a></li>
                                 <li><a href="contact.html">关于我们</a></li>
                             </ul>
@@ -181,10 +181,10 @@
                         </div>
                         <div class="romana_client_log_in">
                             <form action="#" class="romana_client_log_in_after">
-                                <input type="text" name="clientEmail" placeholder="Email here">
-                                <input type="text" name="clientPass" placeholder="password">
-                                <input type="submit" value="Login">
-                                <p> or <a href="registration.html">registration</a></p>
+                                <input type="text" name="clientEmail" placeholder="邮箱/手机">
+                                <input type="text" name="clientPass" placeholder="密码">
+                                <input type="submit" value="登录">
+                                <p> or <a href="registration.html">注册</a></p>
                             </form>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
                         <div class="col-md-8">
                             <!-- Main Chart -->
                             <div class="romana_hero3_text">
-                                <strong>cpu性能</strong>
+                                 <div class="text" style=" text-align:center;"><strong>CPU性能</strong></div>
                                 <div class="tile-config dropdown">
                                     <a data-toggle="dropdown" href="" class="tile-menu"></a>
                                     <ul class="dropdown-menu pull-right text-right">
@@ -247,46 +247,40 @@
                                      
 
        <div id="container" class="main-chart" style="height: 250px"></div>
-   <div id="container-rx"   style="display: none"></div>
+     <div id="container-rx"   style="display: none"></div>
      <div id="container-speed" style="display: none"></div>
 
                                 </div>  
                             </div>
     
                             <!-- Pies -->
-                            <div class="tile text-center">
+                            <div class="tile text-center"align="center">
                           
                       <div class="tile-dark p-10">
                             <div id="container-memory" class="pie-chart-tiny" >
                                     </div>       
                                   <div id="cpu-speed" class="pie-chart-tiny" style="display: none">
                                     </div>
-                                  <div id="container-rpm" class="pie-chart-tiny" >
-                                    </div>
+                               
+                                  
                                 </div>        
 
                             </div>
-
-                        
+                        <div class="romana_hero3_text">
+                                 <div class="text" style=" text-align:center;"><strong>内存占用率</strong></div>
+                       </div> 
                             <div class="clearfix"></div>
                         </div>
                         
                         <div class="col-md-4">
                            
-                            <div class="romana_hero3_text"><strong>用户角色比例</strong>
-                                <div class="tile-config dropdown">
-                                    <a data-toggle="dropdown" href="" class="tile-menu"></a>
-                                    <ul class="dropdown-menu pull-right text-right">
-                                        <li><a href="">Refresh</a></li>
-                                        <li><a href="">Settings</a></li>
-                                    </ul>
-                                </div>
-                          
-                             <div id="pieChart" style="width:326px;height: 400px"></div> 
-                            </div>
-    
-                            <!-- Dynamic Chart -->
-                             <div class="romana_hero3_text"><strong>网卡发送比特数</strong>
+                           
+                               
+                                  
+                             <!-- Dynamic Chart -->
+                             <div class="romana_hero3_text">
+                                 <div class="text" style=" text-align:center;"><strong>网卡发送比特数</strong></div>
+                           
                                 <div class="tile-config dropdown">
                                     <a data-toggle="dropdown" href="" class="tile-menu"></a>
                                     <ul class="dropdown-menu pull-right text-right">
@@ -297,11 +291,33 @@
                                 <div class="p-t-10 p-r-5 p-b-5">
                                    <!--  <div id="dynamic-chart" style="height: 200px"></div> -->
                                  <!--  <div id="container" style="height: 200px"  ></div> -->
-                                  <div id="container-tx" style="height: 200px"  ></div>
+                                  
                                
                                
                                 </div>
                             </div>
+                            <!-- <div class="romana_hero3_text"><strong>用户角色比例</strong>
+                                <div class="tile-config dropdown">
+                                    <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                                    <ul class="dropdown-menu pull-right text-right">
+                                        <li><a href="">Refresh</a></li>
+                                        <li><a href="">Settings</a></li>
+                                    </ul>
+                                </div>
+                          
+                             <div id="pieChart" style="width:326px;height: 400px"></div> 
+                            </div> -->
+    
+    
+                        <div id="container-tx" style="height: 250px"></div>
+                        </br></br></br></br></br></br>
+                        <div id="container-rpm" class="pie-chart-tiny" style="height: 250px" ></div>
+                               <div class="romana_hero3_text">
+                               </br>
+                               <div class="text" style=" text-align:center;"><strong>磁盘利用率</strong></div>
+                                
+    
+                          </div>
                                     </div>
                                 </div>
                             </div>

@@ -842,7 +842,7 @@ small {
   padding-top: 0px;
   padding-left: 40px;
     color: #288feb;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 100;
     margin-bottom: 10px; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -872,7 +872,37 @@ small {
         font-size: 16px;
         margin-bottom: 17px; } }
 
+.romana_hero4_text {
+  padding-top: 0px;
+  padding-left: 0px;
+    color: #288feb;
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 10px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .romana_hero2_text h1 {
+        margin-bottom: 15px;
+        margin-top: 15px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_hero2_text h1 {
+        font-size: 14px;
+        margin-bottom: 17px; } }
 
+.romana_hero5_text {
+  padding-top: 0px;
+  padding-left: 0px;
+    color: #222;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 10px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .romana_hero2_text h1 {
+        margin-bottom: 15px;
+        margin-top: 15px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .romana_hero2_text h1 {
+        font-size: 14px;
+        margin-bottom: 17px; } }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .slider_text_animation {
@@ -1619,6 +1649,30 @@ small {
     color: #288feb;
     padding-right: 4px; }
 
+.romana_footer_bottom_content2 {
+  color: #fff;
+  border-top: 1px solid #404040;
+  font-size: 15px;
+  color: #737373;
+  padding-top: 16px;
+  padding-bottom: 10px; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .romana_footer_bottom_content {
+      font-size: 13px; } }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .romana_footer_bottom_content {
+      font-size: 12px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .romana_footer_bottom_content {
+      font-size: 13px; } }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .romana_footer_bottom_content {
+      font-size: 13px; } }
+  .romana_footer_bottom_content span {
+    color: #288feb;
+    padding-right: 4px; }
+
+
 /* ==================================== All_Page_Common Css ======================= */
 .romana_allPage_area {
   background: url("../../../css/shortcuts/all_page_bg.jpg");
@@ -1639,6 +1693,27 @@ small {
       padding-bottom: 22px; }
       @media only screen and (min-width: 0px) and (max-width: 767px) {
         .romana_allPage_area .romana_allPage_text h1 {
+          font-size: 25px; } }
+
+.romana_allPage_area2 {
+  background: url("../../../css/shortcuts/all_page_bg.jpg");
+  height: 150px; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .romana_allPage_area2 {
+      height: 230px; } }
+  .romana_allPage_area2 .romana_allPage_text2 {
+    color: #fff;
+    position: relative;
+    z-index: 9;
+    text-align: center; }
+    .romana_allPage_area2 .romana_allPage_text2 h1 {
+      font-size: 37px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-top: 40px;
+      padding-bottom: 22px; }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .romana_allPage_area2 .romana_allPage_text2 h1 {
           font-size: 25px; } }
 
 .romana_allPage_area:after {

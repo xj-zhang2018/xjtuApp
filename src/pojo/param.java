@@ -3,16 +3,24 @@ package pojo;
 public class param {
 
 	
-	//数学上的方差等重要参数
+	//鏁板涓婄殑鏂瑰樊绛夐噸瑕佸弬鏁�
 	
 	 double max=0;
      double min=0;
-     double VARIANCE=0;
-	public param(double max, double min, double vARIANCE) {
+     double variance=0;
+     double avg=0;
+	public param(double max, double min, double variance,double avg) {
 		super();
 		this.max = max;
 		this.min = min;
-		VARIANCE = vARIANCE;
+		this.variance = variance;
+		this.avg=avg;
+	}
+	public double getAvg() {
+		return avg;
+	}
+	public void setAvg(double avg) {
+		this.avg = avg;
 	}
 	public double getMax() {
 		return max;
@@ -26,15 +34,20 @@ public class param {
 	public void setMin(double min) {
 		this.min = min;
 	}
-	public double getVARIANCE() {
-		return VARIANCE;
+	
+     
+     
+     public double getVariance() {
+		return variance;
 	}
-	public void setVARIANCE(double vARIANCE) {
-		VARIANCE = vARIANCE;
+	public void setVariance(double variance) {
+		this.variance = variance;
 	}
-     
-     
-     
+	@Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return "方差是"+this.variance;
+    }
 	
 	
 	

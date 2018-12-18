@@ -1,7 +1,7 @@
 /*计算方差等参数的图表数据*/
 var rxbps;
 var speed;
-var txbps;
+var txbps=0;
 $(document).ready(function () {
     Highcharts.setOptions({
         global: {
@@ -10,10 +10,6 @@ $(document).ready(function () {
     });
    
 	
-    
-    
-    
-    
     Highcharts.chart('container-tx', {
         chart: {
             type: 'spline',
@@ -23,7 +19,7 @@ $(document).ready(function () {
                 load: function () {
                     var series = this.series[0];
                     setInterval(function () {
-                    	GetPerformanceForLinux();
+                    	//GetPerformanceForLinux();
                         var x = (new Date()).getTime(), // current time
                             y =txbps;
                         series.addPoint([x, y], true, true);
@@ -83,7 +79,7 @@ $(document).ready(function () {
         }]
     }); 
     
-});
+}); 
 
 
 

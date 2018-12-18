@@ -167,7 +167,7 @@ $(document).ready(function () {
             }
         },
         title: {
-            text: '发送数据比特数'
+            text: ' '
         },
         xAxis: {
             type: 'datetime',

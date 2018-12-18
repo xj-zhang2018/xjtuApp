@@ -43,7 +43,7 @@ $(document).ready(function () {
             }
         },
         title: {
-            text: 'Cpu使用率'
+            text: ' '
         },
         xAxis: {
             type: 'datetime',
