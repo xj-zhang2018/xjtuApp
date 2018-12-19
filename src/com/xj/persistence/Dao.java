@@ -25,10 +25,10 @@ public class Dao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-		    /*String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
+		   /* String url = "jdbc:mysql://localhost:3306/kafkadata?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "root";
-			String password = "123456";*/
-			
+			String password = "123456";
+			*/
 			
 			String url = "jdbc:mysql://172.30.159.167:3306/app4sql?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true";
 			String user = "userA8S";
@@ -121,9 +121,10 @@ public param Getindicator(String datapoint)  {
      double min=0;
      double variance=0;
      double avg=0;
+     double range=0;
      param parm=null;
 	try {
-		String sql="select max(value) ,min(value),VARIANCE(value),avg(value) from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
+		String sql="select max(value) ,min(value),VARIANCE(value),avg(value),sum(value) from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
 		 sql_statement = (Statement) con.createStatement();
 		 ResultSet result = sql_statement.executeQuery(sql);
          
@@ -133,7 +134,14 @@ public param Getindicator(String datapoint)  {
              min= result.getDouble(2);
              variance=result.getDouble(3);
              avg=result.getDouble(4);
-             parm=new param(max, min, variance,avg);
+             range=max-min;
+           
+             parm=new param();
+             parm.setMax(max);
+             parm.setMin(min);
+             parm.setRange(range);
+             parm.setAvg(avg);
+             parm.setVariance(variance);
              System.out.println(" max :" + max + "min " + avg + "鏂瑰樊 " + variance+","+avg); 
          }
                  
@@ -142,7 +150,8 @@ public param Getindicator(String datapoint)  {
 	catch (Exception e) {
 	 			e.printStackTrace();
 	 		}
-	return parm;
+	
+	return GetOtherIndector(datapoint,parm);
 	
 }
 
@@ -151,7 +160,66 @@ public param Getindicator(String datapoint)  {
 
 
 
-
+public param GetOtherIndector(String datapoint,param parmTmp)  {
+	 Statement sql_statement;
+	 double data=0;
+     param parm=null;
+     double sum=0;
+     double sum2=0;
+     double sum3=0;
+     double mse=0;
+     double pianxie=0;
+     double qiaodu=0;
+     double avg=parmTmp.getAvg();
+     double variance=parmTmp.getVariance();
+     List<Double> datas=new ArrayList<>();
+     
+     param res=new param();
+     int size=0;
+	try {
+		String sql="select value from dataentity where  timeStamp>DATE_SUB(NOW(), INTERVAL 200 MINUTE) and datapoint='"+datapoint+"'";
+		 sql_statement = (Statement) con.createStatement();
+		 ResultSet result = sql_statement.executeQuery(sql);
+         while (result.next()) 
+         {
+        	
+             data= result.getDouble(1);
+             datas.add(data);
+	}
+         size=datas.size();
+         System.out.println("datas is"+datas);
+         if(size>0) {
+        	 for(double num:datas) {
+        		 sum+=(num*num);
+        		 sum2+= Math.pow(num-avg, 3);
+        		 sum3+= Math.pow(num-avg, 4);
+        		
+        	 
+        	 }
+        	 
+        		 mse=Math.sqrt(sum/datas.size());
+        		 pianxie=sum2/(size*Math.pow(variance,3));
+        		 qiaodu=sum2/(size*Math.pow(variance,4));
+        		 
+         }
+         res.setAvg(parmTmp.getAvg());
+         res.setMax(parmTmp.getMax());
+         res.setMin(parmTmp.getMin());
+         res.setVariance(parmTmp.getVariance());
+         res.setRange(parmTmp.getRange());
+         res.setMse(mse);
+         res.setPianxie(pianxie);
+         res.setQiaodu(qiaodu);
+         
+       
+         }
+	catch (Exception e) {
+	 			e.printStackTrace();
+	 		}
+	System.out.println("key indectoe is "+res);
+	return res;
+	
+}
 
 
 
@@ -213,9 +281,11 @@ public  List<dataEntity> findRangeRecord(String beginTime, String endTime,String
 		System.out.println("insert finished");*/
 		//db.Getindicator("sensor10");
 		
-		List<dataEntity> res=db.findRangeRecord("2018-12-17 23:01:34","2018-12-17 23:02:34","sensor20");
-		System.out.println(res);
+		/*List<dataEntity> res=db.findRangeRecord("2018-12-17 23:01:34","2018-12-17 23:02:34","sensor20");
+		System.out.println(res);*/
 		
+		
+		db.Getindicator("sensor20");
 		
 	}
  

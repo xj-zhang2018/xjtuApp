@@ -34,10 +34,10 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  <!-- 
+  
   <listener>  
     <listener-class>com.xj.servlet.storeMes</listener-class>  
-</listener>   -->
+</listener>   
   
   
   

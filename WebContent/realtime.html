@@ -258,10 +258,14 @@
 <table border="2" cellspacing="2" >
     <thead >
         <th>&nbsp&nbsp数据通道&nbsp&nbsp</th>
-        <th>&nbsp&nbsp方差&nbsp&nbsp</th>
+        <th>&nbsp&nbsp标准差&nbsp&nbsp</th>
         <th>&nbsp&nbsp均值&nbsp&nbsp</th>
         <th>&nbsp&nbsp最大&nbsp&nbsp</th>
         <th>&nbsp&nbsp最小&nbsp&nbsp</th>
+       <th>&nbsp&nbsp均方值&nbsp&nbsp</th>
+       <th>&nbsp&nbsp幅值范围&nbsp&nbsp</th>
+       <th>&nbsp&nbsp偏斜度&nbsp&nbsp</th>
+       <th>&nbsp&nbsp峭度&nbsp&nbsp</th>
     </thead>
     <tbody id="table"></tbody>
 </table>
@@ -483,6 +487,10 @@
    	         "<td>" + parm.avg + "</td>" +
    	         "<td>" + parm.max + "</td>" +
    	         "<td>" + parm.min + "</td>" +
+   	      "<td>" + parm.mse + "</td>" +
+   	   "<td>" + parm.range + "</td>" +
+   	"<td>" + parm.pianxie + "</td>" +
+   	"<td>" + parm.qiaodu + "</td>" +
    	         "</tr>";
    	           testTbody.append(test);
 		
