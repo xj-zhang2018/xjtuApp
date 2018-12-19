@@ -27,7 +27,7 @@ class PushCallback implements MqttCallback {
 
 
 	public void connectionLost(Throwable cause) {
-    	 System.out.println("断开连接"); 
+    	 System.out.println("鏂紑杩炴帴"); 
     }
  
     public void deliveryComplete(IMqttDeliveryToken token) {
@@ -39,7 +39,7 @@ class PushCallback implements MqttCallback {
          
          String msg=new String(message.getPayload(),"utf-8");
         
-         System.out.println("接收到数据是"+msg);
+         System.out.println("鎺ユ敹鍒版暟鎹槸"+msg);
          
          if(!msg.equals("close")) {
          JSONObject jsonObject = JSON.parseObject(msg);
@@ -51,7 +51,7 @@ class PushCallback implements MqttCallback {
          String deviceId=jsonObject.getString("deviceId");
          double value=jsonObject.getDouble("value");
         
-         String sql="insert into dataEntity(timeStamp,datapoint,deviceId,value) value (?,?,?,?)";
+         String sql="insert into dataentity(timeStamp,datapoint,deviceId,value) value (?,?,?,?)";
         dataEntity data=new dataEntity(time, datapoint, deviceId, value);
         db.insertoneRecord(sql, data);
          }
@@ -69,11 +69,11 @@ class PushCallback implements MqttCallback {
          List<Parameter>param=new ArrayList<>();
          //param.add(new Parameter(Integer.parseInt(args[0]),args[1]));
          //db.insertBatch(sql, param);
-         }else {//�ַ���ð�Ÿ�������������
+         }else {//锟街凤拷锟斤拷冒锟脚革拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
         	if(msg!=null&&!msg.equals("close"))
         		this.client.disconnect();
         	else 
-        		System.out.println("空数据"); 
+        		System.out.println("绌烘暟鎹�"); 
          }*/
     }
 }
