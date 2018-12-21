@@ -34,7 +34,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  
+  <!-- 时刻监听数据，存入数据库 -->
   <listener>  
     <listener-class>com.xj.servlet.storeMes</listener-class>  
 </listener>   
